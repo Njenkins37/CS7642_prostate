@@ -1,3 +1,15 @@
-.venv
-.env
-*.csv
+# Python environments.
+.venv/
+env/
+__pycache__/
+mise.toml
+.vscode/
+
+# Images and Labels.
+images/*
+labels/*
+
+# OS generated files.
+.DS_Store
+
+!*.gitkeep
