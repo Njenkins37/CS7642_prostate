@@ -1,25 +1,52 @@
+"""Unet sample model"""
+
 import torch
-import torch.nn as nn
+from torch import nn
 
 
 class ConvBlock(nn.Module):
+    """
+    The buidling block of the convulitional layers for the layers of a UNet
+    """
+
     def __init__(self, in_channels, out_channels):
         super().__init__()
-        self.encoder = nn.Sequential(
-            nn.Conv2d(in_channels=in_channels, out_channels=out_channels, kernel_size=3,
-                      padding=1),
+        self.conv_block = nn.Sequential(
+            nn.Conv2d(
+                in_channels=in_channels,
+                out_channels=out_channels,
+                kernel_size=3,
+                padding=1,
+            ),
             nn.BatchNorm2d(out_channels),
             nn.ReLU(inplace=True),
-            nn.Conv2d(in_channels=out_channels, out_channels=out_channels, kernel_size=3, padding=1),
+            nn.Conv2d(
+                in_channels=out_channels,
+                out_channels=out_channels,
+                kernel_size=3,
+                padding=1,
+            ),
             nn.BatchNorm2d(out_channels),
-            nn.ReLU(inplace=True)          
+            nn.ReLU(inplace=True),
         )
 
     def forward(self, x):
-        return self.encoder(x)
-    
+        """
+        Forward method of ConvBlock
+
+        params:
+                x: tensor
+        returns
+                output of a conv_block
+        """
+        return self.conv_block(x)
+
 
 class UNet(nn.Module):
+    """
+    Main model class that is composed of the conv blocks.
+    """
+
     def __init__(self, n_slices=3, n_classes=1, features=(64, 128, 256, 512)):
         super().__init__()
         self.pool = nn.MaxPool2d(2, 2)
@@ -28,14 +55,16 @@ class UNet(nn.Module):
         self.encoder3 = ConvBlock(in_channels=features[1], out_channels=features[2])
         self.encoder4 = ConvBlock(in_channels=features[2], out_channels=features[3])
 
-        self.bottleneck = ConvBlock(in_channels=features[3], out_channels=features[3] * 2)
+        self.bottleneck = ConvBlock(
+            in_channels=features[3], out_channels=features[3] * 2
+        )
 
         self.up4 = nn.ConvTranspose2d(features[3] * 2, features[3], 2, stride=2)
-        self.dec4 = ConvBlock(in_channels=features[3]* 2, out_channels=features[3])
+        self.dec4 = ConvBlock(in_channels=features[3] * 2, out_channels=features[3])
 
         self.up3 = nn.ConvTranspose2d(features[3], features[2], 2, stride=2)
         self.dec3 = ConvBlock(features[2] * 2, features[2])
-        
+
         self.up2 = nn.ConvTranspose2d(features[2], features[1], 2, stride=2)
         self.dec2 = ConvBlock(features[1] * 2, features[1])
 
@@ -45,6 +74,9 @@ class UNet(nn.Module):
         self.head = nn.Conv2d(features[0], n_classes, 1)
 
     def forward(self, x):
+        """
+        The forward pass method of the Unet
+        """
         s1 = self.encoder1(x)
         s2 = self.encoder2(self.pool(s1))
         s3 = self.encoder3(self.pool(s2))
