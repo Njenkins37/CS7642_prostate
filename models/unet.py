@@ -20,7 +20,7 @@ class ConvBlock(nn.Module):
     
 
 class UNet(nn.Module):
-    def __init__(self, n_slices=3, n_classes=1, features=(64, 128, 256, 512)):
+    def __init__(self, n_slices=3, n_classes=1, features=(128, 256, 512, 1024)):
         super().__init__()
         self.pool = nn.MaxPool2d(2, 2)
         self.encoder1 = ConvBlock(in_channels=n_slices, out_channels=features[0])
