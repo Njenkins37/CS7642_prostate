@@ -5,3 +5,4 @@ SimpleITK
 matplotlib
 scikit-image
 scipy
+pyyaml

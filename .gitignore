@@ -9,6 +9,9 @@ mise.toml
 *.npz
 images/*
 labels/*
+*.json
+*.log
+*.egg-info
 
 # OS generated files.
 .DS_Store

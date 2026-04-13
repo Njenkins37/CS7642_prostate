@@ -1,0 +1,13 @@
+dataset:
+  crop_size: 128
+  strategy: "strict"  # Options: "strict", "shift"
+
+balancing:
+  mode: "auto_balance" # Options: "auto_balance", "clinical_override"
+  clinical_negative_cases: [] # Example: [10002, 10003] (Only used if mode is clinical_override)
+
+splits:
+  train_ratio: 0.70
+  val_ratio: 0.15
+  test_ratio: 0.15
+  random_seed: 42

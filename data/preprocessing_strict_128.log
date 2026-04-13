@@ -1,430 +1,1484 @@
---- Starting Pipeline | Strategy: STRICT | Crop: 128x128 ---
-  [SUCCESS] Saved tensors for 10005
-  [-] SKIPPED 10008: Missing human label.
-  [SUCCESS] Saved tensors for 10012
-  [-] SKIPPED 10013: Missing human label.
-  [SUCCESS] Saved tensors for 10019
-  [SUCCESS] Saved tensors for 10021
+--- Starting Unified Pipeline | Strategy: STRICT | Crop: 128x128 ---
+Found 424 POSITIVE and 1052 NEGATIVE raw patients.
+
+  [SUCCESS] Saved NEG tensors for 10000
+  [SUCCESS] Saved NEG tensors for 10001
+  [SUCCESS] Saved NEG tensors for 10003
+  [SUCCESS] Saved NEG tensors for 10006
+  [SUCCESS] Saved NEG tensors for 10017
+  [SUCCESS] Saved NEG tensors for 10020
+  [SUCCESS] Saved NEG tensors for 10022
+  [SUCCESS] Saved NEG tensors for 10023
+  [SUCCESS] Saved NEG tensors for 10027
   [-] SKIPPED 10029: Missing human label.
-  [SUCCESS] Saved tensors for 10032
-  [-] SKIPPED 10036: Missing human label.
-  [SUCCESS] Saved tensors for 10040
-  [SUCCESS] Saved tensors for 10043
-  [-] SKIPPED 10044: Missing human label.
-  [SUCCESS] Saved tensors for 10048
-  [-] SKIPPED 10050: Missing human label.
-  [-] SKIPPED 10053: Missing human label.
-  [SUCCESS] Saved tensors for 10059
-  [SUCCESS] Saved tensors for 10074
-  [SUCCESS] Saved tensors for 10078
-  [SUCCESS] Saved tensors for 10079
-  [SUCCESS] Saved tensors for 10085
-  [-] SKIPPED 10094: Missing human label.
-  [SUCCESS] Saved tensors for 10097
-  [-] SKIPPED 10100: Missing human label.
-  [!] REJECTED 10103: Tumor clipped (Strict Mode).
-  [-] SKIPPED 10104: Missing human label.
-  [-] SKIPPED 10106: Missing human label.
-  [SUCCESS] Saved tensors for 10107
-  [!] REJECTED 10110: Tumor clipped (Strict Mode).
-  [-] SKIPPED 10112: Missing human label.
-  [SUCCESS] Saved tensors for 10117
-  [SUCCESS] Saved tensors for 10118
-  [SUCCESS] Saved tensors for 10121
-  [-] SKIPPED 10132: Missing human label.
-  [SUCCESS] Saved tensors for 10134
-  [-] SKIPPED 10135: Missing human label.
-  [-] SKIPPED 10140: Missing human label.
-  [-] SKIPPED 10148: Missing human label.
-  [SUCCESS] Saved tensors for 10157
-  [SUCCESS] Saved tensors for 10164
-  [!] REJECTED 10168: Tumor clipped (Strict Mode).
-  [-] SKIPPED 10170: Missing human label.
-  [-] SKIPPED 10171: Missing human label.
-  [-] SKIPPED 10182: Missing human label.
-  [!] REJECTED 10202: Tumor clipped (Strict Mode).
-  [-] SKIPPED 10209: Missing human label.
-  [SUCCESS] Saved tensors for 10211
-  [-] SKIPPED 10212: Missing human label.
-  [-] SKIPPED 10214: Missing human label.
-  [SUCCESS] Saved tensors for 10216
-  [!] REJECTED 10220: Tumor clipped (Strict Mode).
-  [-] SKIPPED 10225: Missing human label.
+  [SUCCESS] Saved POS tensors for 10032
+  [SUCCESS] Saved NEG tensors for 10033
+  [SUCCESS] Saved NEG tensors for 10035
+  [SUCCESS] Saved NEG tensors for 10038
+  [SUCCESS] Saved POS tensors for 10040
+  [SUCCESS] Saved NEG tensors for 10041
+  [SUCCESS] Saved NEG tensors for 10045
+  [SUCCESS] Saved POS tensors for 10059
+  [SUCCESS] Saved NEG tensors for 10062
+  [SUCCESS] Saved NEG tensors for 10065
+  [SUCCESS] Saved NEG tensors for 10071
+  [SUCCESS] Saved NEG tensors for 10073
+  [SUCCESS] Saved POS tensors for 10078
+  [SUCCESS] Saved NEG tensors for 10080
+  [SUCCESS] Saved NEG tensors for 10082
+  [SUCCESS] Saved NEG tensors for 10083
+  [SUCCESS] Saved POS tensors for 10085
+  [SUCCESS] Saved NEG tensors for 10092
+  [SUCCESS] Saved NEG tensors for 10109
+  [SUCCESS] Saved NEG tensors for 10129
+  [SUCCESS] Saved NEG tensors for 10136
+  [SUCCESS] Saved NEG tensors for 10142
+  [SUCCESS] Saved NEG tensors for 10146
+  [SUCCESS] Saved NEG tensors for 10156
+  [SUCCESS] Saved NEG tensors for 10158
+  [SUCCESS] Saved NEG tensors for 10165
+  [SUCCESS] Saved NEG tensors for 10167
+  [SUCCESS] Saved NEG tensors for 10173
+  [SUCCESS] Saved NEG tensors for 10177
+  [SUCCESS] Saved NEG tensors for 10181
+  [SUCCESS] Saved NEG tensors for 10189
+  [SUCCESS] Saved NEG tensors for 10193
+  [SUCCESS] Saved NEG tensors for 10195
+  [SUCCESS] Saved NEG tensors for 10196
+  [SUCCESS] Saved NEG tensors for 10197
+  [SUCCESS] Saved NEG tensors for 10198
   [-] SKIPPED 10229: Missing human label.
-  [-] SKIPPED 10232: Missing human label.
-  [!] REJECTED 10233: Tumor clipped (Strict Mode).
-  [SUCCESS] Saved tensors for 10234
-  [-] SKIPPED 10235: Missing human label.
-  [-] SKIPPED 10236: Missing human label.
-  [SUCCESS] Saved tensors for 10241
-  [!] REJECTED 10252: Tumor clipped (Strict Mode).
+  [SUCCESS] Saved NEG tensors for 10237
+  [SUCCESS] Saved NEG tensors for 10243
   [!] REJECTED 10257: Tumor clipped (Strict Mode).
-  [SUCCESS] Saved tensors for 10262
-  [SUCCESS] Saved tensors for 10268
-  [-] SKIPPED 10271: Missing human label.
-  [SUCCESS] Saved tensors for 10273
-  [!] REJECTED 10274: Tumor clipped (Strict Mode).
-  [-] SKIPPED 10280: Missing human label.
+  [SUCCESS] Saved NEG tensors for 10263
+  [SUCCESS] Saved NEG tensors for 10266
+  [SUCCESS] Saved NEG tensors for 10272
   [-] SKIPPED 10282: Missing human label.
-  [-] SKIPPED 10283: Missing human label.
-  [!] REJECTED 10289: Tumor clipped (Strict Mode).
-  [-] SKIPPED 10293: Missing human label.
   [!] REJECTED 10294: Tumor clipped (Strict Mode).
-  [SUCCESS] Saved tensors for 10304
-  [-] SKIPPED 10312: Missing human label.
-  [-] SKIPPED 10318: Missing human label.
-  [SUCCESS] Saved tensors for 10322
-  [-] SKIPPED 10324: Missing human label.
-  [!] REJECTED 10329: Tumor clipped (Strict Mode).
-  [-] SKIPPED 10334: Missing human label.
-  [SUCCESS] Saved tensors for 10338
-  [SUCCESS] Saved tensors for 10339
-  [SUCCESS] Saved tensors for 10340
-  [!] REJECTED 10342: Tumor clipped (Strict Mode).
-  [SUCCESS] Saved tensors for 10350
-  [-] SKIPPED 10354: Missing human label.
-  [!] REJECTED 10355: Tumor clipped (Strict Mode).
-  [-] SKIPPED 10358: Missing human label.
-  [-] SKIPPED 10365: Missing human label.
-  [SUCCESS] Saved tensors for 10368
-  [-] SKIPPED 10369: Missing human label.
-  [-] SKIPPED 10371: Missing human label.
-  [!] REJECTED 10372: Tumor clipped (Strict Mode).
-  [-] SKIPPED 10375: Missing human label.
-  [-] SKIPPED 10376: Missing human label.
-  [-] SKIPPED 10377: Missing human label.
-  [SUCCESS] Saved tensors for 10380
-  [SUCCESS] Saved tensors for 10383
-  [!] REJECTED 10390: Tumor clipped (Strict Mode).
+  [SUCCESS] Saved NEG tensors for 10298
+  [SUCCESS] Saved NEG tensors for 10301
+  [SUCCESS] Saved NEG tensors for 10302
+  [SUCCESS] Saved NEG tensors for 10310
+  [SUCCESS] Saved NEG tensors for 10315
+  [SUCCESS] Saved NEG tensors for 10323
+  [SUCCESS] Saved NEG tensors for 10326
+  [SUCCESS] Saved NEG tensors for 10335
+  [SUCCESS] Saved NEG tensors for 10336
+  [SUCCESS] Saved POS tensors for 10338
+  [SUCCESS] Saved NEG tensors for 10345
+  [SUCCESS] Saved NEG tensors for 10352
+  [SUCCESS] Saved NEG tensors for 10359
+  [SUCCESS] Saved NEG tensors for 10363
+  [SUCCESS] Saved POS tensors for 10368
+  [SUCCESS] Saved NEG tensors for 10378
+  [SUCCESS] Saved NEG tensors for 10382
+  [SUCCESS] Saved NEG tensors for 10385
   [!] REJECTED 10392: Tumor clipped (Strict Mode).
-  [-] SKIPPED 10393: Missing human label.
-  [-] SKIPPED 10397: Missing human label.
-  [SUCCESS] Saved tensors for 10398
-  [-] SKIPPED 10399: Missing human label.
+  [SUCCESS] Saved NEG tensors for 10395
   [-] SKIPPED 10400: Missing human label.
-  [-] SKIPPED 10402: Missing human label.
-  [SUCCESS] Saved tensors for 10405
-  [-] SKIPPED 10408: Missing human label.
-  [SUCCESS] Saved tensors for 10418
-  [!] REJECTED 10424: Tumor clipped (Strict Mode).
-  [-] SKIPPED 10426: Missing human label.
-  [-] SKIPPED 10431: Missing human label.
-  [-] SKIPPED 10433: Missing human label.
-  [SUCCESS] Saved tensors for 10434
-  [!] REJECTED 10442: Tumor clipped (Strict Mode).
-  [SUCCESS] Saved tensors for 10451
-  [-] SKIPPED 10456: Missing human label.
-  [-] SKIPPED 10458: Missing human label.
+  [SUCCESS] Saved POS tensors for 10418
+  [SUCCESS] Saved NEG tensors for 10427
+  [SUCCESS] Saved NEG tensors for 10430
+  [SUCCESS] Saved NEG tensors for 10437
+  [SUCCESS] Saved NEG tensors for 10438
+  [SUCCESS] Saved NEG tensors for 10439
+  [SUCCESS] Saved NEG tensors for 10449
   [-] SKIPPED 10459: Missing human label.
-  [SUCCESS] Saved tensors for 10463
-  [-] SKIPPED 10464: Missing human label.
-  [-] SKIPPED 10465: Missing human label.
-  [-] SKIPPED 10471: Missing human label.
-  [SUCCESS] Saved tensors for 10473
-  [-] SKIPPED 10481: Missing human label.
-  [!] REJECTED 10482: Tumor clipped (Strict Mode).
-  [SUCCESS] Saved tensors for 10484
-  [!] REJECTED 10486: Tumor clipped (Strict Mode).
-  [SUCCESS] Saved tensors for 10490
-  [-] SKIPPED 10494: Missing human label.
-  [-] SKIPPED 10496: Missing human label.
-  [-] SKIPPED 10497: Missing human label.
-  [-] SKIPPED 10498: Missing human label.
-  [-] SKIPPED 10499: Missing human label.
+  [SUCCESS] Saved POS tensors for 10463
+  [SUCCESS] Saved NEG tensors for 10466
+  [SUCCESS] Saved NEG tensors for 10474
+  [SUCCESS] Saved NEG tensors for 10479
+  [SUCCESS] Saved NEG tensors for 10488
+  [SUCCESS] Saved NEG tensors for 10500
   [-] SKIPPED 10501: Missing human label.
-  [SUCCESS] Saved tensors for 10503
-  [-] SKIPPED 10508: Missing human label.
-  [-] SKIPPED 10510: Missing human label.
+  [SUCCESS] Saved NEG tensors for 10502
+  [SUCCESS] Saved NEG tensors for 10509
   [-] SKIPPED 10515: Missing human label.
-  [-] SKIPPED 10517: Missing human label.
-  [-] SKIPPED 10519: Missing human label.
-  [-] SKIPPED 10520: Missing human label.
+  [SUCCESS] Saved NEG tensors for 10521
   [!] REJECTED 10522: Tumor clipped (Strict Mode).
-  [SUCCESS] Saved tensors for 10523
-  [SUCCESS] Saved tensors for 10526
-  [SUCCESS] Saved tensors for 10529
-  [-] SKIPPED 10537: Missing human label.
-  [SUCCESS] Saved tensors for 10539
-  [SUCCESS] Saved tensors for 10540
-  [-] SKIPPED 10545: Missing human label.
-  [-] SKIPPED 10547: Missing human label.
-  [SUCCESS] Saved tensors for 10548
-  [!] REJECTED 10549: Tumor clipped (Strict Mode).
+  [SUCCESS] Saved NEG tensors for 10524
+  [SUCCESS] Saved NEG tensors for 10525
+  [SUCCESS] Saved POS tensors for 10526
+  [SUCCESS] Saved NEG tensors for 10528
+  [SUCCESS] Saved POS tensors for 10529
+  [SUCCESS] Saved NEG tensors for 10533
+  [SUCCESS] Saved POS tensors for 10540
+  [SUCCESS] Saved NEG tensors for 10541
+  [SUCCESS] Saved NEG tensors for 10542
   [-] SKIPPED 10550: Missing human label.
-  [-] SKIPPED 10554: Missing human label.
-  [-] SKIPPED 10555: Missing human label.
-  [SUCCESS] Saved tensors for 10558
-  [-] SKIPPED 10560: Missing human label.
   [-] SKIPPED 10562: Missing human label.
   [-] SKIPPED 10565: Missing human label.
+  [SUCCESS] Saved POS tensors for 10568
+  [SUCCESS] Saved NEG tensors for 10571
+  [SUCCESS] Saved NEG tensors for 10572
+  [SUCCESS] Saved NEG tensors for 10581
+  [SUCCESS] Saved NEG tensors for 10583
+  [SUCCESS] Saved NEG tensors for 10595
+  [SUCCESS] Saved NEG tensors for 10599
+  [SUCCESS] Saved NEG tensors for 10602
+  [SUCCESS] Saved NEG tensors for 10615
+  [SUCCESS] Saved NEG tensors for 10617
+  [SUCCESS] Saved NEG tensors for 10624
+  [SUCCESS] Saved NEG tensors for 10628
+  [SUCCESS] Saved NEG tensors for 10632
+  [SUCCESS] Saved NEG tensors for 10639
+  [SUCCESS] Saved NEG tensors for 10643
+  [SUCCESS] Saved NEG tensors for 10647
+  [SUCCESS] Saved NEG tensors for 10648
+  [SUCCESS] Saved NEG tensors for 10649
+  [SUCCESS] Saved NEG tensors for 10667
+  [SUCCESS] Saved NEG tensors for 10674
+  [SUCCESS] Saved NEG tensors for 10675
+  [-] SKIPPED 10679: Missing human label.
+  [SUCCESS] Saved NEG tensors for 10680
+  [SUCCESS] Saved NEG tensors for 10685
+  [SUCCESS] Saved POS tensors for 10699
+  [-] SKIPPED 10701: Missing human label.
+  [SUCCESS] Saved NEG tensors for 10711
+  [-] SKIPPED 10717: Missing human label.
+  [SUCCESS] Saved NEG tensors for 10719
+  [SUCCESS] Saved POS tensors for 10726
+  [SUCCESS] Saved POS tensors for 10730
+  [SUCCESS] Saved NEG tensors for 10736
+  [SUCCESS] Saved POS tensors for 10743
+  [SUCCESS] Saved NEG tensors for 10745
+  [SUCCESS] Saved NEG tensors for 10747
+  [SUCCESS] Saved NEG tensors for 10751
+  [-] SKIPPED 10753: Missing human label.
+  [-] SKIPPED 10760: Missing human label.
+  [SUCCESS] Saved NEG tensors for 10761
+  [SUCCESS] Saved NEG tensors for 10770
+  [-] SKIPPED 10772: Missing human label.
+  [-] SKIPPED 10775: Missing human label.
+  [SUCCESS] Saved NEG tensors for 10780
+  [SUCCESS] Saved NEG tensors for 10782
+  [SUCCESS] Saved NEG tensors for 10784
+  [SUCCESS] Saved NEG tensors for 10788
+  [SUCCESS] Saved NEG tensors for 10791
+  [SUCCESS] Saved NEG tensors for 10803
+  [!] REJECTED 10807: Tumor clipped (Strict Mode).
+  [SUCCESS] Saved NEG tensors for 10813
+  [SUCCESS] Saved POS tensors for 10834
+  [SUCCESS] Saved POS tensors for 10836
+  [SUCCESS] Saved POS tensors for 10839
+  [SUCCESS] Saved NEG tensors for 10841
+  [SUCCESS] Saved NEG tensors for 10847
+  [SUCCESS] Saved NEG tensors for 10850
+  [SUCCESS] Saved NEG tensors for 10851
+  [-] SKIPPED 10862: Missing human label.
+  [SUCCESS] Saved POS tensors for 10868
+  [SUCCESS] Saved NEG tensors for 10871
+  [SUCCESS] Saved POS tensors for 10872
+  [-] SKIPPED 10873: Missing human label.
+  [SUCCESS] Saved NEG tensors for 10879
+  [SUCCESS] Saved NEG tensors for 10899
+  [SUCCESS] Saved NEG tensors for 10902
+  [SUCCESS] Saved NEG tensors for 10908
+  [SUCCESS] Saved NEG tensors for 10913
+  [SUCCESS] Saved POS tensors for 10921
+  [SUCCESS] Saved NEG tensors for 10922
+  [SUCCESS] Saved NEG tensors for 10923
+  [SUCCESS] Saved NEG tensors for 10929
+  [SUCCESS] Saved NEG tensors for 10931
+  [SUCCESS] Saved NEG tensors for 10933
+  [SUCCESS] Saved NEG tensors for 10934
+  [SUCCESS] Saved NEG tensors for 10935
+  [SUCCESS] Saved NEG tensors for 10939
+  [SUCCESS] Saved POS tensors for 10942
+  [SUCCESS] Saved NEG tensors for 10947
+  [SUCCESS] Saved NEG tensors for 10955
+  [-] SKIPPED 10956: Missing human label.
+  [SUCCESS] Saved NEG tensors for 10958
+  [SUCCESS] Saved POS tensors for 10961
+  [SUCCESS] Saved NEG tensors for 10962
+  [SUCCESS] Saved POS tensors for 10964
+  [SUCCESS] Saved NEG tensors for 10978
+  [SUCCESS] Saved NEG tensors for 10981
+  [SUCCESS] Saved NEG tensors for 10982
+  [SUCCESS] Saved POS tensors for 10985
+  [SUCCESS] Saved NEG tensors for 10990
+  [-] SKIPPED 10993: Missing human label.
+  [SUCCESS] Saved NEG tensors for 10994
+  [SUCCESS] Saved NEG tensors for 10997
+  [SUCCESS] Saved POS tensors for 11002
+  [SUCCESS] Saved NEG tensors for 11003
+  [SUCCESS] Saved NEG tensors for 11006
+  [SUCCESS] Saved NEG tensors for 11007
+  [SUCCESS] Saved NEG tensors for 11020
+  [SUCCESS] Saved NEG tensors for 11021
+  [SUCCESS] Saved POS tensors for 11032
+  [SUCCESS] Saved NEG tensors for 11035
+  [-] SKIPPED 11045: Missing human label.
+  [SUCCESS] Saved NEG tensors for 11057
+  [SUCCESS] Saved NEG tensors for 11064
+  [-] SKIPPED 11067: Missing human label.
+  [SUCCESS] Saved NEG tensors for 11071
+  [SUCCESS] Saved NEG tensors for 11079
+  [SUCCESS] Saved NEG tensors for 11084
+  [SUCCESS] Saved POS tensors for 11086
+  [SUCCESS] Saved NEG tensors for 11087
+  [SUCCESS] Saved NEG tensors for 11090
+  [SUCCESS] Saved NEG tensors for 11094
+  [-] SKIPPED 11095: Missing human label.
+  [SUCCESS] Saved NEG tensors for 11099
+  [SUCCESS] Saved NEG tensors for 11106
+  [-] SKIPPED 11111: Missing human label.
+  [SUCCESS] Saved NEG tensors for 11120
+  [SUCCESS] Saved NEG tensors for 11125
+  [SUCCESS] Saved NEG tensors for 11128
+  [SUCCESS] Saved NEG tensors for 11135
+  [SUCCESS] Saved POS tensors for 11137
+  [SUCCESS] Saved NEG tensors for 11138
+  [SUCCESS] Saved NEG tensors for 11144
+  [SUCCESS] Saved POS tensors for 11149
+  [SUCCESS] Saved NEG tensors for 11151
+  [SUCCESS] Saved NEG tensors for 11153
+  [-] SKIPPED 11157: Missing human label.
+  [SUCCESS] Saved NEG tensors for 11159
+  [SUCCESS] Saved NEG tensors for 11161
+  [SUCCESS] Saved NEG tensors for 11164
+  [SUCCESS] Saved POS tensors for 11165
+  [SUCCESS] Saved NEG tensors for 11166
+  [SUCCESS] Saved NEG tensors for 11171
+  [-] SKIPPED 11173: Missing human label.
+  [SUCCESS] Saved NEG tensors for 11176
+  [!] REJECTED 11177: Tumor clipped (Strict Mode).
+  [SUCCESS] Saved NEG tensors for 11183
+  [SUCCESS] Saved POS tensors for 11188
+  [SUCCESS] Saved NEG tensors for 11196
+  [SUCCESS] Saved NEG tensors for 11197
+  [SUCCESS] Saved POS tensors for 11198
+  [SUCCESS] Saved NEG tensors for 11200
+  [SUCCESS] Saved NEG tensors for 11202
+  [SUCCESS] Saved NEG tensors for 11212
+  [SUCCESS] Saved NEG tensors for 11220
+  [SUCCESS] Saved NEG tensors for 11221
+  [SUCCESS] Saved NEG tensors for 11222
+  [SUCCESS] Saved POS tensors for 11231
+  [SUCCESS] Saved NEG tensors for 11234
+  [-] SKIPPED 11248: Missing human label.
+  [SUCCESS] Saved NEG tensors for 11249
+  [SUCCESS] Saved NEG tensors for 11259
+  [!] REJECTED 11260: Tumor clipped (Strict Mode).
+  [-] SKIPPED 11266: Missing human label.
+  [-] SKIPPED 11285: Missing human label.
+  [SUCCESS] Saved NEG tensors for 11288
+  [SUCCESS] Saved NEG tensors for 11294
+  [SUCCESS] Saved NEG tensors for 11304
+  [SUCCESS] Saved NEG tensors for 11307
+  [-] SKIPPED 11313: Missing human label.
+  [-] SKIPPED 11322: Missing human label.
+  [SUCCESS] Saved POS tensors for 11330
+  [-] SKIPPED 11332: Missing human label.
+  [-] SKIPPED 11334: Missing human label.
+  [SUCCESS] Saved NEG tensors for 11335
+  [-] SKIPPED 11341: Missing human label.
+  [-] SKIPPED 11346: Missing human label.
+  [SUCCESS] Saved NEG tensors for 11351
+  [-] SKIPPED 11352: Missing human label.
+  [SUCCESS] Saved NEG tensors for 11353
+  [SUCCESS] Saved POS tensors for 11377
+  [SUCCESS] Saved NEG tensors for 11383
+  [SUCCESS] Saved NEG tensors for 11386
+  [SUCCESS] Saved NEG tensors for 11389
+  [SUCCESS] Saved NEG tensors for 11391
+  [SUCCESS] Saved NEG tensors for 11392
+  [-] SKIPPED 11400: Missing human label.
+  [SUCCESS] Saved NEG tensors for 11420
+  [-] SKIPPED 11425: Missing human label.
+  [SUCCESS] Saved NEG tensors for 11427
+  [!] REJECTED 11442: Tumor clipped (Strict Mode).
+  [-] SKIPPED 11451: Missing human label.
+  [SUCCESS] Saved NEG tensors for 11461
+  [SUCCESS] Saved NEG tensors for 11467
+  [SUCCESS] Saved NEG tensors for 11469
+  [SUCCESS] Saved POS tensors for 11471
+  [SUCCESS] Saved NEG tensors for 11473
+  [SUCCESS] Saved NEG tensors for 11474
+  [-] SKIPPED 10008: Missing human label.
+  [SUCCESS] Saved NEG tensors for 10010
+  [SUCCESS] Saved NEG tensors for 10011
+  [SUCCESS] Saved NEG tensors for 10016
+  [SUCCESS] Saved POS tensors for 10019
+  [SUCCESS] Saved NEG tensors for 10024
+  [SUCCESS] Saved NEG tensors for 10026
+  [SUCCESS] Saved NEG tensors for 10031
+  [-] SKIPPED 10036: Missing human label.
+  [SUCCESS] Saved NEG tensors for 10039
+  [SUCCESS] Saved POS tensors for 10043
+  [SUCCESS] Saved NEG tensors for 10047
+  [SUCCESS] Saved POS tensors for 10048
+  [SUCCESS] Saved NEG tensors for 10049
+  [SUCCESS] Saved NEG tensors for 10052
+  [-] SKIPPED 10053: Missing human label.
+  [SUCCESS] Saved NEG tensors for 10054
+  [SUCCESS] Saved NEG tensors for 10056
+  [SUCCESS] Saved NEG tensors for 10060
+  [SUCCESS] Saved NEG tensors for 10063
+  [SUCCESS] Saved NEG tensors for 10070
+  [SUCCESS] Saved NEG tensors for 10072
+  [SUCCESS] Saved NEG tensors for 10076
+  [SUCCESS] Saved NEG tensors for 10087
+  [SUCCESS] Saved NEG tensors for 10096
+  [SUCCESS] Saved POS tensors for 10097
+  [SUCCESS] Saved NEG tensors for 10098
+  [-] SKIPPED 10106: Missing human label.
+  [SUCCESS] Saved POS tensors for 10107
+  [SUCCESS] Saved NEG tensors for 10108
+  [-] SKIPPED 10112: Missing human label.
+  [SUCCESS] Saved POS tensors for 10117
+  [SUCCESS] Saved NEG tensors for 10122
+  [SUCCESS] Saved NEG tensors for 10126
+  [SUCCESS] Saved NEG tensors for 10138
+  [SUCCESS] Saved NEG tensors for 10141
+  [SUCCESS] Saved NEG tensors for 10152
+  [SUCCESS] Saved NEG tensors for 10153
+  [SUCCESS] Saved NEG tensors for 10160
+  [SUCCESS] Saved NEG tensors for 10162
+  [!] REJECTED 10168: Tumor clipped (Strict Mode).
+  [-] SKIPPED 10182: Missing human label.
+  [SUCCESS] Saved NEG tensors for 10183
+  [SUCCESS] Saved NEG tensors for 10185
+  [SUCCESS] Saved NEG tensors for 10188
+  [SUCCESS] Saved NEG tensors for 10192
+  [SUCCESS] Saved NEG tensors for 10199
+  [SUCCESS] Saved NEG tensors for 10201
+  [SUCCESS] Saved NEG tensors for 10206
+  [SUCCESS] Saved NEG tensors for 10208
+  [-] SKIPPED 10209: Missing human label.
+  [SUCCESS] Saved POS tensors for 10211
+  [SUCCESS] Saved NEG tensors for 10217
+  [SUCCESS] Saved NEG tensors for 10219
+  [SUCCESS] Saved NEG tensors for 10222
+  [SUCCESS] Saved NEG tensors for 10224
+  [SUCCESS] Saved NEG tensors for 10226
+  [SUCCESS] Saved NEG tensors for 10227
+  [SUCCESS] Saved NEG tensors for 10228
+  [SUCCESS] Saved NEG tensors for 10231
+  [SUCCESS] Saved NEG tensors for 10238
+  [SUCCESS] Saved NEG tensors for 10240
+  [SUCCESS] Saved NEG tensors for 10242
+  [SUCCESS] Saved NEG tensors for 10250
+  [SUCCESS] Saved NEG tensors for 10256
+  [SUCCESS] Saved POS tensors for 10268
+  [!] REJECTED 10274: Tumor clipped (Strict Mode).
+  [SUCCESS] Saved NEG tensors for 10279
+  [-] SKIPPED 10280: Missing human label.
+  [SUCCESS] Saved NEG tensors for 10285
+  [SUCCESS] Saved NEG tensors for 10287
+  [SUCCESS] Saved NEG tensors for 10290
+  [SUCCESS] Saved NEG tensors for 10296
+  [SUCCESS] Saved NEG tensors for 10300
+  [SUCCESS] Saved NEG tensors for 10307
+  [SUCCESS] Saved NEG tensors for 10311
+  [SUCCESS] Saved NEG tensors for 10327
+  [!] REJECTED 10329: Tumor clipped (Strict Mode).
+  [SUCCESS] Saved NEG tensors for 10331
+  [-] SKIPPED 10334: Missing human label.
+  [!] REJECTED 10342: Tumor clipped (Strict Mode).
+  [SUCCESS] Saved NEG tensors for 10343
+  [SUCCESS] Saved NEG tensors for 10348
+  [SUCCESS] Saved POS tensors for 10350
+  [SUCCESS] Saved NEG tensors for 10351
+  [SUCCESS] Saved NEG tensors for 10356
+  [SUCCESS] Saved NEG tensors for 10360
+  [SUCCESS] Saved NEG tensors for 10366
+  [SUCCESS] Saved NEG tensors for 10367
+  [SUCCESS] Saved NEG tensors for 10370
+  [SUCCESS] Saved NEG tensors for 10373
+  [-] SKIPPED 10377: Missing human label.
+  [SUCCESS] Saved NEG tensors for 10379
+  [SUCCESS] Saved NEG tensors for 10388
+  [SUCCESS] Saved NEG tensors for 10391
+  [SUCCESS] Saved NEG tensors for 10401
+  [SUCCESS] Saved POS tensors for 10405
+  [SUCCESS] Saved NEG tensors for 10417
+  [SUCCESS] Saved NEG tensors for 10422
+  [!] REJECTED 10424: Tumor clipped (Strict Mode).
+  [SUCCESS] Saved NEG tensors for 10425
+  [SUCCESS] Saved NEG tensors for 10428
+  [SUCCESS] Saved NEG tensors for 10429
+  [SUCCESS] Saved NEG tensors for 10432
+  [SUCCESS] Saved NEG tensors for 10435
+  [SUCCESS] Saved NEG tensors for 10436
+  [SUCCESS] Saved NEG tensors for 10446
+  [SUCCESS] Saved NEG tensors for 10450
+  [SUCCESS] Saved NEG tensors for 10453
+  [SUCCESS] Saved NEG tensors for 10454
+  [SUCCESS] Saved NEG tensors for 10461
+  [SUCCESS] Saved POS tensors for 10473
+  [SUCCESS] Saved NEG tensors for 10489
+  [-] SKIPPED 10494: Missing human label.
+  [-] SKIPPED 10496: Missing human label.
+  [-] SKIPPED 10498: Missing human label.
+  [SUCCESS] Saved POS tensors for 10503
+  [SUCCESS] Saved NEG tensors for 10505
+  [SUCCESS] Saved NEG tensors for 10506
+  [SUCCESS] Saved NEG tensors for 10507
+  [SUCCESS] Saved NEG tensors for 10513
+  [SUCCESS] Saved NEG tensors for 10518
+  [SUCCESS] Saved NEG tensors for 10531
+  [SUCCESS] Saved NEG tensors for 10538
+  [SUCCESS] Saved NEG tensors for 10553
+  [-] SKIPPED 10555: Missing human label.
+  [SUCCESS] Saved NEG tensors for 10556
+  [SUCCESS] Saved NEG tensors for 10563
   [-] SKIPPED 10567: Missing human label.
-  [SUCCESS] Saved tensors for 10568
-  [SUCCESS] Saved tensors for 10570
-  [-] SKIPPED 10577: Missing human label.
-  [-] SKIPPED 10584: Missing human label.
-  [!] REJECTED 10589: Tumor clipped (Strict Mode).
-  [SUCCESS] Saved tensors for 10604
-  [SUCCESS] Saved tensors for 10605
-  [-] SKIPPED 10606: Missing human label.
-  [SUCCESS] Saved tensors for 10607
-  [-] SKIPPED 10611: Missing human label.
-  [SUCCESS] Saved tensors for 10620
+  [SUCCESS] Saved NEG tensors for 10586
+  [SUCCESS] Saved NEG tensors for 10594
+  [SUCCESS] Saved NEG tensors for 10601
+  [SUCCESS] Saved NEG tensors for 10603
+  [SUCCESS] Saved POS tensors for 10607
+  [SUCCESS] Saved NEG tensors for 10609
+  [SUCCESS] Saved NEG tensors for 10612
+  [SUCCESS] Saved POS tensors for 10620
   [-] SKIPPED 10622: Missing human label.
   [!] REJECTED 10626: Tumor clipped (Strict Mode).
   [-] SKIPPED 10630: Missing human label.
+  [SUCCESS] Saved NEG tensors for 10650
+  [SUCCESS] Saved NEG tensors for 10653
+  [SUCCESS] Saved NEG tensors for 10655
+  [SUCCESS] Saved NEG tensors for 10664
+  [SUCCESS] Saved NEG tensors for 10666
+  [SUCCESS] Saved NEG tensors for 10669
+  [SUCCESS] Saved NEG tensors for 10692
+  [SUCCESS] Saved POS tensors for 10700
+  [SUCCESS] Saved NEG tensors for 10706
+  [SUCCESS] Saved POS tensors for 10707
+  [SUCCESS] Saved NEG tensors for 10708
+  [SUCCESS] Saved NEG tensors for 10723
+  [SUCCESS] Saved NEG tensors for 10727
+  [SUCCESS] Saved NEG tensors for 10737
+  [-] SKIPPED 10742: Missing human label.
+  [SUCCESS] Saved NEG tensors for 10750
+  [SUCCESS] Saved NEG tensors for 10756
+  [SUCCESS] Saved NEG tensors for 10757
+  [SUCCESS] Saved NEG tensors for 10764
+  [SUCCESS] Saved NEG tensors for 10765
+  [SUCCESS] Saved NEG tensors for 10774
+  [SUCCESS] Saved NEG tensors for 10790
+  [SUCCESS] Saved NEG tensors for 10796
+  [-] SKIPPED 10799: Missing human label.
+  [SUCCESS] Saved NEG tensors for 10801
+  [SUCCESS] Saved NEG tensors for 10805
+  [-] SKIPPED 10806: Missing human label.
+  [SUCCESS] Saved NEG tensors for 10809
+  [-] SKIPPED 10811: Missing human label.
+  [SUCCESS] Saved POS tensors for 10825
+  [SUCCESS] Saved NEG tensors for 10832
+  [SUCCESS] Saved POS tensors for 10833
+  [SUCCESS] Saved NEG tensors for 10843
+  [SUCCESS] Saved NEG tensors for 10844
+  [SUCCESS] Saved NEG tensors for 10853
+  [SUCCESS] Saved NEG tensors for 10864
+  [!] REJECTED 10867: Tumor clipped (Strict Mode).
+  [SUCCESS] Saved NEG tensors for 10874
+  [SUCCESS] Saved NEG tensors for 10876
+  [SUCCESS] Saved NEG tensors for 10877
+  [SUCCESS] Saved NEG tensors for 10878
+  [SUCCESS] Saved POS tensors for 10880
+  [-] SKIPPED 10882: Missing human label.
+  [SUCCESS] Saved NEG tensors for 10887
+  [!] REJECTED 10888: Tumor clipped (Strict Mode).
+  [SUCCESS] Saved NEG tensors for 10892
+  [-] SKIPPED 10894: Missing human label.
+  [SUCCESS] Saved POS tensors for 10895
+  [-] SKIPPED 10909: Missing human label.
+  [SUCCESS] Saved NEG tensors for 10914
+  [SUCCESS] Saved NEG tensors for 10916
+  [SUCCESS] Saved NEG tensors for 10918
+  [SUCCESS] Saved NEG tensors for 10919
+  [!] REJECTED 10925: Tumor clipped (Strict Mode).
+  [!] REJECTED 10938: Tumor clipped (Strict Mode).
+  [SUCCESS] Saved NEG tensors for 10940
+  [-] SKIPPED 10943: Missing human label.
+  [SUCCESS] Saved NEG tensors for 10945
+  [SUCCESS] Saved NEG tensors for 10951
+  [SUCCESS] Saved NEG tensors for 10952
+  [SUCCESS] Saved NEG tensors for 10960
+  [-] SKIPPED 10965: Missing human label.
+  [SUCCESS] Saved NEG tensors for 10967
+  [SUCCESS] Saved NEG tensors for 10974
+  [SUCCESS] Saved NEG tensors for 10989
+  [SUCCESS] Saved NEG tensors for 10999
+  [SUCCESS] Saved NEG tensors for 11004
+  [SUCCESS] Saved NEG tensors for 11013
+  [SUCCESS] Saved NEG tensors for 11023
+  [SUCCESS] Saved NEG tensors for 11034
+  [-] SKIPPED 11043: Missing human label.
+  [SUCCESS] Saved NEG tensors for 11048
+  [SUCCESS] Saved NEG tensors for 11053
+  [SUCCESS] Saved NEG tensors for 11065
+  [SUCCESS] Saved NEG tensors for 11066
+  [SUCCESS] Saved NEG tensors for 11075
+  [SUCCESS] Saved NEG tensors for 11078
+  [SUCCESS] Saved POS tensors for 11080
+  [-] SKIPPED 11083: Missing human label.
+  [SUCCESS] Saved NEG tensors for 11097
+  [SUCCESS] Saved NEG tensors for 11100
+  [SUCCESS] Saved NEG tensors for 11110
+  [SUCCESS] Saved NEG tensors for 11113
+  [!] REJECTED 11114: Tumor clipped (Strict Mode).
+  [SUCCESS] Saved NEG tensors for 11116
+  [SUCCESS] Saved NEG tensors for 11121
+  [SUCCESS] Saved NEG tensors for 11126
+  [SUCCESS] Saved POS tensors for 11130
+  [SUCCESS] Saved NEG tensors for 11142
+  [SUCCESS] Saved NEG tensors for 11167
+  [SUCCESS] Saved POS tensors for 11186
+  [SUCCESS] Saved NEG tensors for 11193
+  [SUCCESS] Saved NEG tensors for 11204
+  [!] REJECTED 11208: Tumor clipped (Strict Mode).
+  [SUCCESS] Saved NEG tensors for 11214
+  [SUCCESS] Saved NEG tensors for 11216
+  [SUCCESS] Saved NEG tensors for 11230
+  [SUCCESS] Saved NEG tensors for 11232
+  [SUCCESS] Saved NEG tensors for 11242
+  [SUCCESS] Saved NEG tensors for 11246
+  [SUCCESS] Saved POS tensors for 11247
+  [SUCCESS] Saved NEG tensors for 11250
+  [SUCCESS] Saved NEG tensors for 11252
+  [SUCCESS] Saved POS tensors for 11253
+  [SUCCESS] Saved NEG tensors for 11254
+  [SUCCESS] Saved NEG tensors for 11261
+  [SUCCESS] Saved NEG tensors for 11264
+  [SUCCESS] Saved NEG tensors for 11268
+  [SUCCESS] Saved NEG tensors for 11272
+  [-] SKIPPED 11274: Missing human label.
+  [-] SKIPPED 11283: Missing human label.
+  [!] REJECTED 11284: Tumor clipped (Strict Mode).
+  [SUCCESS] Saved NEG tensors for 11289
+  [SUCCESS] Saved NEG tensors for 11290
+  [SUCCESS] Saved NEG tensors for 11295
+  [SUCCESS] Saved NEG tensors for 11297
+  [SUCCESS] Saved NEG tensors for 11309
+  [SUCCESS] Saved NEG tensors for 11314
+  [SUCCESS] Saved NEG tensors for 11315
+  [SUCCESS] Saved NEG tensors for 11318
+  [SUCCESS] Saved NEG tensors for 11320
+  [SUCCESS] Saved NEG tensors for 11323
+  [SUCCESS] Saved NEG tensors for 11331
+  [SUCCESS] Saved NEG tensors for 11337
+  [SUCCESS] Saved POS tensors for 11338
+  [SUCCESS] Saved NEG tensors for 11339
+  [SUCCESS] Saved NEG tensors for 11342
+  [-] SKIPPED 11350: Missing human label.
+  [SUCCESS] Saved NEG tensors for 11355
+  [SUCCESS] Saved NEG tensors for 11359
+  [SUCCESS] Saved NEG tensors for 11362
+  [SUCCESS] Saved NEG tensors for 11366
+  [-] SKIPPED 11369: Missing human label.
+  [SUCCESS] Saved NEG tensors for 11371
+  [SUCCESS] Saved NEG tensors for 11372
+  [SUCCESS] Saved NEG tensors for 11376
+  [SUCCESS] Saved POS tensors for 11384
+  [!] REJECTED 11385: Tumor clipped (Strict Mode).
+  [SUCCESS] Saved NEG tensors for 11396
+  [SUCCESS] Saved NEG tensors for 11402
+  [SUCCESS] Saved NEG tensors for 11406
+  [SUCCESS] Saved NEG tensors for 11410
+  [SUCCESS] Saved NEG tensors for 11415
+  [SUCCESS] Saved NEG tensors for 11416
+  [SUCCESS] Saved NEG tensors for 11421
+  [!] REJECTED 11423: Tumor clipped (Strict Mode).
+  [SUCCESS] Saved NEG tensors for 11424
+  [SUCCESS] Saved NEG tensors for 11435
+  [-] SKIPPED 11437: Missing human label.
+  [SUCCESS] Saved NEG tensors for 11445
+  [SUCCESS] Saved NEG tensors for 11449
+  [SUCCESS] Saved NEG tensors for 11454
+  [SUCCESS] Saved NEG tensors for 11457
+  [SUCCESS] Saved NEG tensors for 11466
+  [-] SKIPPED 11468: Missing human label.
+  [SUCCESS] Saved NEG tensors for 10004
+  [SUCCESS] Saved NEG tensors for 10014
+  [SUCCESS] Saved NEG tensors for 10034
+  [SUCCESS] Saved NEG tensors for 10067
+  [SUCCESS] Saved NEG tensors for 10068
+  [SUCCESS] Saved POS tensors for 10074
+  [SUCCESS] Saved NEG tensors for 10075
+  [SUCCESS] Saved POS tensors for 10079
+  [SUCCESS] Saved NEG tensors for 10081
+  [SUCCESS] Saved NEG tensors for 10090
+  [SUCCESS] Saved NEG tensors for 10093
+  [SUCCESS] Saved NEG tensors for 10102
+  [!] REJECTED 10103: Tumor clipped (Strict Mode).
+  [SUCCESS] Saved NEG tensors for 10105
+  [!] REJECTED 10110: Tumor clipped (Strict Mode).
+  [SUCCESS] Saved POS tensors for 10118
+  [SUCCESS] Saved NEG tensors for 10119
+  [SUCCESS] Saved NEG tensors for 10127
+  [SUCCESS] Saved NEG tensors for 10130
+  [-] SKIPPED 10132: Missing human label.
+  [SUCCESS] Saved NEG tensors for 10145
+  [SUCCESS] Saved NEG tensors for 10149
+  [SUCCESS] Saved NEG tensors for 10151
+  [SUCCESS] Saved POS tensors for 10157
+  [SUCCESS] Saved NEG tensors for 10161
+  [-] SKIPPED 10170: Missing human label.
+  [SUCCESS] Saved NEG tensors for 10172
+  [SUCCESS] Saved NEG tensors for 10178
+  [SUCCESS] Saved NEG tensors for 10186
+  [SUCCESS] Saved NEG tensors for 10200
+  [SUCCESS] Saved NEG tensors for 10205
+  [SUCCESS] Saved NEG tensors for 10230
+  [!] REJECTED 10233: Tumor clipped (Strict Mode).
+  [SUCCESS] Saved POS tensors for 10234
+  [-] SKIPPED 10235: Missing human label.
+  [SUCCESS] Saved NEG tensors for 10239
+  [SUCCESS] Saved POS tensors for 10241
+  [SUCCESS] Saved NEG tensors for 10246
+  [SUCCESS] Saved NEG tensors for 10249
+  [SUCCESS] Saved NEG tensors for 10259
+  [SUCCESS] Saved NEG tensors for 10264
+  [SUCCESS] Saved NEG tensors for 10269
+  [SUCCESS] Saved POS tensors for 10273
+  [SUCCESS] Saved NEG tensors for 10276
+  [SUCCESS] Saved NEG tensors for 10277
+  [SUCCESS] Saved NEG tensors for 10281
+  [SUCCESS] Saved NEG tensors for 10288
+  [SUCCESS] Saved NEG tensors for 10291
+  [-] SKIPPED 10312: Missing human label.
+  [SUCCESS] Saved NEG tensors for 10313
+  [SUCCESS] Saved NEG tensors for 10314
+  [SUCCESS] Saved NEG tensors for 10316
+  [SUCCESS] Saved NEG tensors for 10317
+  [-] SKIPPED 10318: Missing human label.
+  [SUCCESS] Saved NEG tensors for 10319
+  [SUCCESS] Saved NEG tensors for 10320
+  [SUCCESS] Saved NEG tensors for 10337
+  [SUCCESS] Saved NEG tensors for 10341
+  [SUCCESS] Saved NEG tensors for 10349
+  [SUCCESS] Saved NEG tensors for 10357
+  [SUCCESS] Saved NEG tensors for 10362
+  [-] SKIPPED 10369: Missing human label.
+  [SUCCESS] Saved NEG tensors for 10387
+  [SUCCESS] Saved NEG tensors for 10389
+  [-] SKIPPED 10393: Missing human label.
+  [SUCCESS] Saved NEG tensors for 10394
+  [SUCCESS] Saved NEG tensors for 10396
+  [-] SKIPPED 10402: Missing human label.
+  [SUCCESS] Saved NEG tensors for 10404
+  [SUCCESS] Saved NEG tensors for 10406
+  [-] SKIPPED 10408: Missing human label.
+  [SUCCESS] Saved NEG tensors for 10409
+  [SUCCESS] Saved NEG tensors for 10412
+  [SUCCESS] Saved NEG tensors for 10416
+  [SUCCESS] Saved NEG tensors for 10421
+  [-] SKIPPED 10431: Missing human label.
+  [SUCCESS] Saved NEG tensors for 10443
+  [SUCCESS] Saved NEG tensors for 10448
+  [SUCCESS] Saved NEG tensors for 10452
+  [-] SKIPPED 10456: Missing human label.
+  [-] SKIPPED 10458: Missing human label.
+  [SUCCESS] Saved NEG tensors for 10460
+  [SUCCESS] Saved NEG tensors for 10462
+  [SUCCESS] Saved NEG tensors for 10467
+  [SUCCESS] Saved NEG tensors for 10468
+  [SUCCESS] Saved NEG tensors for 10469
+  [-] SKIPPED 10471: Missing human label.
+  [-] SKIPPED 10481: Missing human label.
+  [SUCCESS] Saved NEG tensors for 10491
+  [SUCCESS] Saved NEG tensors for 10492
+  [SUCCESS] Saved NEG tensors for 10493
+  [SUCCESS] Saved NEG tensors for 10495
+  [SUCCESS] Saved NEG tensors for 10504
+  [-] SKIPPED 10508: Missing human label.
+  [-] SKIPPED 10517: Missing human label.
+  [-] SKIPPED 10520: Missing human label.
+  [SUCCESS] Saved POS tensors for 10523
+  [SUCCESS] Saved NEG tensors for 10530
+  [SUCCESS] Saved NEG tensors for 10532
+  [SUCCESS] Saved NEG tensors for 10535
+  [SUCCESS] Saved NEG tensors for 10536
+  [-] SKIPPED 10537: Missing human label.
+  [SUCCESS] Saved POS tensors for 10539
+  [SUCCESS] Saved NEG tensors for 10543
+  [-] SKIPPED 10545: Missing human label.
+  [-] SKIPPED 10554: Missing human label.
+  [SUCCESS] Saved POS tensors for 10570
+  [SUCCESS] Saved NEG tensors for 10575
+  [SUCCESS] Saved NEG tensors for 10580
+  [-] SKIPPED 10584: Missing human label.
+  [SUCCESS] Saved NEG tensors for 10592
+  [SUCCESS] Saved NEG tensors for 10593
+  [SUCCESS] Saved NEG tensors for 10597
+  [SUCCESS] Saved POS tensors for 10604
+  [SUCCESS] Saved POS tensors for 10605
+  [SUCCESS] Saved NEG tensors for 10608
+  [SUCCESS] Saved NEG tensors for 10610
+  [SUCCESS] Saved NEG tensors for 10613
+  [SUCCESS] Saved NEG tensors for 10618
+  [SUCCESS] Saved NEG tensors for 10621
+  [SUCCESS] Saved NEG tensors for 10623
+  [SUCCESS] Saved NEG tensors for 10629
   [-] SKIPPED 10631: Missing human label.
-  [SUCCESS] Saved tensors for 10634
-  [SUCCESS] Saved tensors for 10635
-  [-] SKIPPED 10636: Missing human label.
-  [SUCCESS] Saved tensors for 10637
-  [-] SKIPPED 10638: Missing human label.
-  [SUCCESS] Saved tensors for 10641
+  [SUCCESS] Saved NEG tensors for 10642
   [-] SKIPPED 10644: Missing human label.
-  [-] SKIPPED 10651: Missing human label.
   [-] SKIPPED 10652: Missing human label.
   [-] SKIPPED 10658: Missing human label.
+  [SUCCESS] Saved NEG tensors for 10659
   [-] SKIPPED 10660: Missing human label.
-  [-] SKIPPED 10661: Missing human label.
-  [SUCCESS] Saved tensors for 10665
-  [SUCCESS] Saved tensors for 10668
-  [!] REJECTED 10670: Tumor clipped (Strict Mode).
-  [-] SKIPPED 10679: Missing human label.
-  [-] SKIPPED 10682: Missing human label.
+  [SUCCESS] Saved NEG tensors for 10662
+  [SUCCESS] Saved NEG tensors for 10671
+  [SUCCESS] Saved NEG tensors for 10673
+  [SUCCESS] Saved NEG tensors for 10677
   [-] SKIPPED 10684: Missing human label.
   [-] SKIPPED 10686: Missing human label.
-  [!] REJECTED 10687: Tumor clipped (Strict Mode).
-  [SUCCESS] Saved tensors for 10688
-  [-] SKIPPED 10690: Missing human label.
+  [SUCCESS] Saved POS tensors for 10688
+  [SUCCESS] Saved NEG tensors for 10691
   [-] SKIPPED 10693: Missing human label.
-  [SUCCESS] Saved tensors for 10699
-  [SUCCESS] Saved tensors for 10700
-  [-] SKIPPED 10701: Missing human label.
-  [SUCCESS] Saved tensors for 10707
+  [SUCCESS] Saved NEG tensors for 10698
   [-] SKIPPED 10710: Missing human label.
-  [-] SKIPPED 10717: Missing human label.
+  [SUCCESS] Saved NEG tensors for 10712
+  [SUCCESS] Saved NEG tensors for 10713
   [-] SKIPPED 10718: Missing human label.
-  [SUCCESS] Saved tensors for 10721
-  [SUCCESS] Saved tensors for 10726
-  [!] REJECTED 10728: Tumor clipped (Strict Mode).
-  [SUCCESS] Saved tensors for 10730
+  [SUCCESS] Saved NEG tensors for 10720
+  [SUCCESS] Saved NEG tensors for 10722
+  [SUCCESS] Saved NEG tensors for 10729
+  [SUCCESS] Saved NEG tensors for 10734
+  [SUCCESS] Saved NEG tensors for 10738
   [-] SKIPPED 10739: Missing human label.
-  [-] SKIPPED 10742: Missing human label.
-  [SUCCESS] Saved tensors for 10743
-  [-] SKIPPED 10753: Missing human label.
-  [-] SKIPPED 10754: Missing human label.
   [-] SKIPPED 10758: Missing human label.
-  [-] SKIPPED 10760: Missing human label.
-  [-] SKIPPED 10763: Missing human label.
-  [SUCCESS] Saved tensors for 10768
-  [-] SKIPPED 10772: Missing human label.
-  [-] SKIPPED 10773: Missing human label.
-  [-] SKIPPED 10775: Missing human label.
-  [SUCCESS] Saved tensors for 10777
-  [-] SKIPPED 10781: Missing human label.
+  [SUCCESS] Saved NEG tensors for 10759
+  [SUCCESS] Saved NEG tensors for 10766
+  [SUCCESS] Saved NEG tensors for 10767
+  [SUCCESS] Saved POS tensors for 10768
+  [SUCCESS] Saved NEG tensors for 10769
+  [SUCCESS] Saved NEG tensors for 10771
+  [SUCCESS] Saved POS tensors for 10777
+  [SUCCESS] Saved NEG tensors for 10779
+  [SUCCESS] Saved NEG tensors for 10783
+  [SUCCESS] Saved NEG tensors for 10786
+  [SUCCESS] Saved NEG tensors for 10787
+  [SUCCESS] Saved NEG tensors for 10793
+  [SUCCESS] Saved NEG tensors for 10794
+  [SUCCESS] Saved NEG tensors for 10795
   [-] SKIPPED 10797: Missing human label.
-  [!] REJECTED 10798: Tumor clipped (Strict Mode).
-  [-] SKIPPED 10799: Missing human label.
-  [SUCCESS] Saved tensors for 10804
-  [-] SKIPPED 10806: Missing human label.
-  [!] REJECTED 10807: Tumor clipped (Strict Mode).
-  [!] REJECTED 10808: Tumor clipped (Strict Mode).
-  [-] SKIPPED 10810: Missing human label.
-  [-] SKIPPED 10811: Missing human label.
-  [SUCCESS] Saved tensors for 10825
-  [-] SKIPPED 10827: Missing human label.
-  [SUCCESS] Saved tensors for 10833
-  [SUCCESS] Saved tensors for 10834
-  [SUCCESS] Saved tensors for 10836
-  [-] SKIPPED 10837: Missing human label.
-  [SUCCESS] Saved tensors for 10839
+  [SUCCESS] Saved POS tensors for 10804
+  [SUCCESS] Saved NEG tensors for 10816
+  [SUCCESS] Saved NEG tensors for 10818
+  [SUCCESS] Saved NEG tensors for 10822
+  [SUCCESS] Saved NEG tensors for 10824
+  [SUCCESS] Saved NEG tensors for 10828
+  [SUCCESS] Saved NEG tensors for 10829
+  [SUCCESS] Saved NEG tensors for 10835
   [!] REJECTED 10842: Tumor clipped (Strict Mode).
-  [-] SKIPPED 10845: Missing human label.
+  [SUCCESS] Saved NEG tensors for 10848
   [-] SKIPPED 10852: Missing human label.
-  [-] SKIPPED 10856: Missing human label.
-  [-] SKIPPED 10857: Missing human label.
-  [-] SKIPPED 10862: Missing human label.
-  [-] SKIPPED 10865: Missing human label.
-  [!] REJECTED 10867: Tumor clipped (Strict Mode).
-  [SUCCESS] Saved tensors for 10868
-  [SUCCESS] Saved tensors for 10872
-  [-] SKIPPED 10873: Missing human label.
-  [-] SKIPPED 10875: Missing human label.
-  [SUCCESS] Saved tensors for 10880
-  [-] SKIPPED 10882: Missing human label.
+  [SUCCESS] Saved NEG tensors for 10858
+  [SUCCESS] Saved NEG tensors for 10863
   [-] SKIPPED 10883: Missing human label.
-  [!] REJECTED 10885: Tumor clipped (Strict Mode).
-  [!] REJECTED 10888: Tumor clipped (Strict Mode).
-  [-] SKIPPED 10889: Missing human label.
   [-] SKIPPED 10890: Missing human label.
-  [-] SKIPPED 10894: Missing human label.
-  [SUCCESS] Saved tensors for 10895
+  [!] REJECTED 10910: Tumor clipped (Strict Mode).
+  [SUCCESS] Saved NEG tensors for 10928
+  [SUCCESS] Saved NEG tensors for 10936
+  [SUCCESS] Saved NEG tensors for 10941
+  [SUCCESS] Saved NEG tensors for 10969
+  [!] REJECTED 10970: Tumor clipped (Strict Mode).
+  [SUCCESS] Saved NEG tensors for 10973
+  [-] SKIPPED 10976: Missing human label.
+  [SUCCESS] Saved NEG tensors for 10980
+  [SUCCESS] Saved NEG tensors for 10983
+  [SUCCESS] Saved NEG tensors for 10987
+  [SUCCESS] Saved NEG tensors for 10998
+  [SUCCESS] Saved NEG tensors for 11000
+  [SUCCESS] Saved NEG tensors for 11008
+  [SUCCESS] Saved NEG tensors for 11012
+  [SUCCESS] Saved NEG tensors for 11017
+  [SUCCESS] Saved NEG tensors for 11018
+  [SUCCESS] Saved NEG tensors for 11025
+  [SUCCESS] Saved NEG tensors for 11027
+  [-] SKIPPED 11037: Missing human label.
+  [SUCCESS] Saved NEG tensors for 11038
+  [!] REJECTED 11039: Tumor clipped (Strict Mode).
+  [SUCCESS] Saved NEG tensors for 11040
+  [!] REJECTED 11041: Tumor clipped (Strict Mode).
+  [SUCCESS] Saved NEG tensors for 11044
+  [SUCCESS] Saved NEG tensors for 11047
+  [SUCCESS] Saved NEG tensors for 11056
+  [SUCCESS] Saved NEG tensors for 11060
+  [SUCCESS] Saved NEG tensors for 11061
+  [SUCCESS] Saved NEG tensors for 11062
+  [SUCCESS] Saved NEG tensors for 11069
+  [SUCCESS] Saved POS tensors for 11074
+  [SUCCESS] Saved NEG tensors for 11077
+  [SUCCESS] Saved NEG tensors for 11085
+  [SUCCESS] Saved NEG tensors for 11089
+  [SUCCESS] Saved NEG tensors for 11098
+  [SUCCESS] Saved NEG tensors for 11101
+  [SUCCESS] Saved NEG tensors for 11105
+  [SUCCESS] Saved NEG tensors for 11107
+  [SUCCESS] Saved NEG tensors for 11109
+  [SUCCESS] Saved NEG tensors for 11112
+  [-] SKIPPED 11117: Missing human label.
+  [SUCCESS] Saved POS tensors for 11122
+  [SUCCESS] Saved NEG tensors for 11124
+  [SUCCESS] Saved NEG tensors for 11127
+  [SUCCESS] Saved NEG tensors for 11129
+  [SUCCESS] Saved NEG tensors for 11131
+  [SUCCESS] Saved NEG tensors for 11136
+  [-] SKIPPED 11146: Missing human label.
+  [SUCCESS] Saved NEG tensors for 11147
+  [SUCCESS] Saved NEG tensors for 11148
+  [SUCCESS] Saved POS tensors for 11152
+  [!] REJECTED 11168: Tumor clipped (Strict Mode).
+  [SUCCESS] Saved NEG tensors for 11170
+  [SUCCESS] Saved NEG tensors for 11180
+  [SUCCESS] Saved POS tensors for 11181
+  [SUCCESS] Saved NEG tensors for 11184
+  [!] REJECTED 11194: Tumor clipped (Strict Mode).
+  [SUCCESS] Saved NEG tensors for 11201
+  [SUCCESS] Saved NEG tensors for 11205
+  [SUCCESS] Saved NEG tensors for 11206
+  [SUCCESS] Saved NEG tensors for 11210
+  [SUCCESS] Saved NEG tensors for 11217
+  [SUCCESS] Saved NEG tensors for 11219
+  [SUCCESS] Saved NEG tensors for 11223
+  [SUCCESS] Saved NEG tensors for 11227
+  [SUCCESS] Saved POS tensors for 11229
+  [SUCCESS] Saved NEG tensors for 11235
+  [SUCCESS] Saved POS tensors for 11236
+  [-] SKIPPED 11243: Missing human label.
+  [-] SKIPPED 11245: Missing human label.
+  [-] SKIPPED 11258: Missing human label.
+  [SUCCESS] Saved NEG tensors for 11262
+  [SUCCESS] Saved NEG tensors for 11265
+  [SUCCESS] Saved POS tensors for 11269
+  [SUCCESS] Saved NEG tensors for 11273
+  [SUCCESS] Saved NEG tensors for 11276
+  [SUCCESS] Saved NEG tensors for 11281
+  [SUCCESS] Saved NEG tensors for 11291
+  [!] REJECTED 11305: Tumor clipped (Strict Mode).
+  [SUCCESS] Saved POS tensors for 11306
+  [SUCCESS] Saved NEG tensors for 11310
+  [SUCCESS] Saved NEG tensors for 11312
+  [SUCCESS] Saved POS tensors for 11325
+  [SUCCESS] Saved NEG tensors for 11327
+  [SUCCESS] Saved NEG tensors for 11328
+  [SUCCESS] Saved NEG tensors for 11329
+  [-] SKIPPED 11333: Missing human label.
+  [SUCCESS] Saved NEG tensors for 11343
+  [SUCCESS] Saved NEG tensors for 11347
+  [SUCCESS] Saved NEG tensors for 11349
+  [SUCCESS] Saved NEG tensors for 11356
+  [SUCCESS] Saved NEG tensors for 11358
+  [SUCCESS] Saved NEG tensors for 11360
+  [-] SKIPPED 11367: Missing human label.
+  [SUCCESS] Saved POS tensors for 11373
+  [SUCCESS] Saved POS tensors for 11382
+  [SUCCESS] Saved NEG tensors for 11388
+  [SUCCESS] Saved NEG tensors for 11403
+  [SUCCESS] Saved NEG tensors for 11404
+  [SUCCESS] Saved NEG tensors for 11405
+  [SUCCESS] Saved NEG tensors for 11407
+  [SUCCESS] Saved NEG tensors for 11408
+  [SUCCESS] Saved NEG tensors for 11412
+  [SUCCESS] Saved NEG tensors for 11413
+  [SUCCESS] Saved NEG tensors for 11414
+  [-] SKIPPED 11426: Missing human label.
+  [SUCCESS] Saved NEG tensors for 11429
+  [SUCCESS] Saved NEG tensors for 11434
+  [SUCCESS] Saved NEG tensors for 11439
+  [SUCCESS] Saved POS tensors for 11441
+  [SUCCESS] Saved NEG tensors for 11443
+  [!] REJECTED 11447: Tumor clipped (Strict Mode).
+  [SUCCESS] Saved NEG tensors for 11455
+  [SUCCESS] Saved POS tensors for 11456
+  [SUCCESS] Saved NEG tensors for 10009
+  [SUCCESS] Saved NEG tensors for 10028
+  [SUCCESS] Saved NEG tensors for 10030
+  [SUCCESS] Saved NEG tensors for 10037
+  [SUCCESS] Saved NEG tensors for 10042
+  [SUCCESS] Saved NEG tensors for 10046
+  [-] SKIPPED 10050: Missing human label.
+  [SUCCESS] Saved NEG tensors for 10051
+  [SUCCESS] Saved NEG tensors for 10055
+  [SUCCESS] Saved NEG tensors for 10058
+  [SUCCESS] Saved NEG tensors for 10061
+  [SUCCESS] Saved NEG tensors for 10069
+  [SUCCESS] Saved NEG tensors for 10077
+  [SUCCESS] Saved NEG tensors for 10084
+  [SUCCESS] Saved NEG tensors for 10089
+  [SUCCESS] Saved NEG tensors for 10099
+  [-] SKIPPED 10100: Missing human label.
+  [-] SKIPPED 10104: Missing human label.
+  [SUCCESS] Saved NEG tensors for 10115
+  [SUCCESS] Saved NEG tensors for 10116
+  [SUCCESS] Saved NEG tensors for 10120
+  [SUCCESS] Saved NEG tensors for 10124
+  [SUCCESS] Saved NEG tensors for 10125
+  [SUCCESS] Saved NEG tensors for 10128
+  [SUCCESS] Saved NEG tensors for 10131
+  [SUCCESS] Saved POS tensors for 10134
+  [-] SKIPPED 10140: Missing human label.
+  [SUCCESS] Saved NEG tensors for 10147
+  [-] SKIPPED 10148: Missing human label.
+  [SUCCESS] Saved NEG tensors for 10155
+  [SUCCESS] Saved NEG tensors for 10159
+  [SUCCESS] Saved NEG tensors for 10163
+  [SUCCESS] Saved POS tensors for 10164
+  [SUCCESS] Saved NEG tensors for 10169
+  [SUCCESS] Saved NEG tensors for 10174
+  [SUCCESS] Saved NEG tensors for 10180
+  [SUCCESS] Saved NEG tensors for 10184
+  [SUCCESS] Saved NEG tensors for 10187
+  [SUCCESS] Saved NEG tensors for 10191
+  [!] REJECTED 10202: Tumor clipped (Strict Mode).
+  [SUCCESS] Saved NEG tensors for 10204
+  [SUCCESS] Saved NEG tensors for 10213
+  [SUCCESS] Saved NEG tensors for 10218
+  [!] REJECTED 10220: Tumor clipped (Strict Mode).
+  [SUCCESS] Saved NEG tensors for 10223
+  [-] SKIPPED 10236: Missing human label.
+  [SUCCESS] Saved NEG tensors for 10245
+  [SUCCESS] Saved NEG tensors for 10247
+  [SUCCESS] Saved NEG tensors for 10248
+  [SUCCESS] Saved NEG tensors for 10260
+  [SUCCESS] Saved NEG tensors for 10265
+  [SUCCESS] Saved NEG tensors for 10270
+  [-] SKIPPED 10283: Missing human label.
+  [-] SKIPPED 10293: Missing human label.
+  [SUCCESS] Saved NEG tensors for 10297
+  [SUCCESS] Saved NEG tensors for 10303
+  [SUCCESS] Saved NEG tensors for 10305
+  [SUCCESS] Saved NEG tensors for 10306
+  [SUCCESS] Saved NEG tensors for 10308
+  [SUCCESS] Saved NEG tensors for 10309
+  [SUCCESS] Saved NEG tensors for 10321
+  [-] SKIPPED 10324: Missing human label.
+  [SUCCESS] Saved NEG tensors for 10328
+  [SUCCESS] Saved NEG tensors for 10332
+  [SUCCESS] Saved NEG tensors for 10333
+  [SUCCESS] Saved POS tensors for 10339
+  [SUCCESS] Saved NEG tensors for 10347
+  [-] SKIPPED 10371: Missing human label.
+  [!] REJECTED 10372: Tumor clipped (Strict Mode).
+  [SUCCESS] Saved NEG tensors for 10374
+  [-] SKIPPED 10376: Missing human label.
+  [SUCCESS] Saved POS tensors for 10380
+  [SUCCESS] Saved POS tensors for 10398
+  [SUCCESS] Saved NEG tensors for 10410
+  [SUCCESS] Saved NEG tensors for 10413
+  [SUCCESS] Saved NEG tensors for 10414
+  [SUCCESS] Saved NEG tensors for 10420
+  [SUCCESS] Saved NEG tensors for 10423
+  [-] SKIPPED 10433: Missing human label.
+  [SUCCESS] Saved NEG tensors for 10441
+  [!] REJECTED 10442: Tumor clipped (Strict Mode).
+  [SUCCESS] Saved NEG tensors for 10444
+  [-] SKIPPED 10465: Missing human label.
+  [SUCCESS] Saved NEG tensors for 10472
+  [SUCCESS] Saved NEG tensors for 10476
+  [SUCCESS] Saved NEG tensors for 10477
+  [SUCCESS] Saved POS tensors for 10484
+  [SUCCESS] Saved NEG tensors for 10487
+  [SUCCESS] Saved POS tensors for 10490
+  [SUCCESS] Saved NEG tensors for 10511
+  [SUCCESS] Saved NEG tensors for 10512
+  [SUCCESS] Saved NEG tensors for 10514
+  [SUCCESS] Saved NEG tensors for 10516
+  [SUCCESS] Saved NEG tensors for 10546
+  [SUCCESS] Saved POS tensors for 10548
+  [!] REJECTED 10549: Tumor clipped (Strict Mode).
+  [SUCCESS] Saved NEG tensors for 10551
+  [SUCCESS] Saved NEG tensors for 10552
+  [SUCCESS] Saved POS tensors for 10558
+  [SUCCESS] Saved NEG tensors for 10559
+  [SUCCESS] Saved NEG tensors for 10573
+  [SUCCESS] Saved NEG tensors for 10574
+  [SUCCESS] Saved NEG tensors for 10576
+  [-] SKIPPED 10577: Missing human label.
+  [SUCCESS] Saved NEG tensors for 10579
+  [SUCCESS] Saved NEG tensors for 10582
+  [SUCCESS] Saved NEG tensors for 10585
+  [SUCCESS] Saved NEG tensors for 10587
+  [SUCCESS] Saved NEG tensors for 10588
+  [SUCCESS] Saved NEG tensors for 10590
+  [SUCCESS] Saved NEG tensors for 10591
+  [SUCCESS] Saved NEG tensors for 10598
+  [SUCCESS] Saved NEG tensors for 10600
+  [-] SKIPPED 10606: Missing human label.
+  [SUCCESS] Saved NEG tensors for 10614
+  [SUCCESS] Saved NEG tensors for 10625
+  [SUCCESS] Saved NEG tensors for 10633
+  [SUCCESS] Saved POS tensors for 10634
+  [SUCCESS] Saved POS tensors for 10635
+  [-] SKIPPED 10636: Missing human label.
+  [-] SKIPPED 10638: Missing human label.
+  [SUCCESS] Saved NEG tensors for 10640
+  [-] SKIPPED 10651: Missing human label.
+  [SUCCESS] Saved NEG tensors for 10656
+  [SUCCESS] Saved NEG tensors for 10657
+  [SUCCESS] Saved NEG tensors for 10663
+  [SUCCESS] Saved POS tensors for 10665
+  [SUCCESS] Saved NEG tensors for 10672
+  [SUCCESS] Saved NEG tensors for 10681
+  [-] SKIPPED 10682: Missing human label.
+  [SUCCESS] Saved NEG tensors for 10683
+  [!] REJECTED 10687: Tumor clipped (Strict Mode).
+  [SUCCESS] Saved NEG tensors for 10695
+  [SUCCESS] Saved NEG tensors for 10696
+  [SUCCESS] Saved NEG tensors for 10697
+  [SUCCESS] Saved NEG tensors for 10704
+  [SUCCESS] Saved NEG tensors for 10705
+  [SUCCESS] Saved NEG tensors for 10714
+  [SUCCESS] Saved NEG tensors for 10715
+  [SUCCESS] Saved POS tensors for 10721
+  [SUCCESS] Saved NEG tensors for 10724
+  [SUCCESS] Saved NEG tensors for 10725
+  [!] REJECTED 10728: Tumor clipped (Strict Mode).
+  [SUCCESS] Saved NEG tensors for 10731
+  [SUCCESS] Saved NEG tensors for 10744
+  [SUCCESS] Saved NEG tensors for 10748
+  [SUCCESS] Saved NEG tensors for 10749
+  [SUCCESS] Saved NEG tensors for 10755
+  [SUCCESS] Saved NEG tensors for 10762
+  [-] SKIPPED 10763: Missing human label.
+  [-] SKIPPED 10773: Missing human label.
+  [SUCCESS] Saved NEG tensors for 10776
+  [-] SKIPPED 10781: Missing human label.
+  [SUCCESS] Saved NEG tensors for 10789
+  [SUCCESS] Saved NEG tensors for 10792
+  [SUCCESS] Saved NEG tensors for 10802
+  [-] SKIPPED 10810: Missing human label.
+  [SUCCESS] Saved NEG tensors for 10815
+  [SUCCESS] Saved NEG tensors for 10821
+  [SUCCESS] Saved NEG tensors for 10823
+  [SUCCESS] Saved NEG tensors for 10826
+  [-] SKIPPED 10827: Missing human label.
+  [SUCCESS] Saved NEG tensors for 10830
+  [SUCCESS] Saved NEG tensors for 10831
+  [SUCCESS] Saved NEG tensors for 10840
+  [-] SKIPPED 10845: Missing human label.
+  [SUCCESS] Saved NEG tensors for 10855
+  [-] SKIPPED 10856: Missing human label.
+  [SUCCESS] Saved NEG tensors for 10861
+  [-] SKIPPED 10865: Missing human label.
+  [SUCCESS] Saved NEG tensors for 10866
+  [SUCCESS] Saved NEG tensors for 10881
+  [SUCCESS] Saved NEG tensors for 10891
+  [SUCCESS] Saved NEG tensors for 10893
+  [SUCCESS] Saved NEG tensors for 10898
+  [SUCCESS] Saved NEG tensors for 10905
+  [SUCCESS] Saved NEG tensors for 10906
+  [SUCCESS] Saved NEG tensors for 10907
+  [SUCCESS] Saved POS tensors for 10920
+  [SUCCESS] Saved NEG tensors for 10924
+  [SUCCESS] Saved NEG tensors for 10927
+  [SUCCESS] Saved NEG tensors for 10930
+  [SUCCESS] Saved POS tensors for 10932
+  [SUCCESS] Saved NEG tensors for 10937
+  [SUCCESS] Saved NEG tensors for 10944
+  [SUCCESS] Saved NEG tensors for 10946
+  [SUCCESS] Saved NEG tensors for 10949
+  [SUCCESS] Saved POS tensors for 10953
+  [SUCCESS] Saved NEG tensors for 10954
+  [SUCCESS] Saved NEG tensors for 10963
+  [SUCCESS] Saved POS tensors for 10968
+  [SUCCESS] Saved NEG tensors for 10979
+  [SUCCESS] Saved NEG tensors for 10984
+  [SUCCESS] Saved NEG tensors for 10986
+  [SUCCESS] Saved NEG tensors for 10988
+  [-] SKIPPED 10991: Missing human label.
+  [SUCCESS] Saved NEG tensors for 10992
+  [SUCCESS] Saved NEG tensors for 11005
+  [SUCCESS] Saved NEG tensors for 11016
+  [SUCCESS] Saved NEG tensors for 11019
+  [SUCCESS] Saved NEG tensors for 11022
+  [SUCCESS] Saved NEG tensors for 11026
+  [SUCCESS] Saved NEG tensors for 11031
+  [SUCCESS] Saved NEG tensors for 11033
+  [SUCCESS] Saved NEG tensors for 11036
+  [SUCCESS] Saved NEG tensors for 11042
+  [!] REJECTED 11050: Tumor clipped (Strict Mode).
+  [SUCCESS] Saved POS tensors for 11051
+  [SUCCESS] Saved NEG tensors for 11052
+  [SUCCESS] Saved POS tensors for 11054
+  [-] SKIPPED 11055: Missing human label.
+  [SUCCESS] Saved NEG tensors for 11059
+  [!] REJECTED 11068: Tumor clipped (Strict Mode).
+  [SUCCESS] Saved NEG tensors for 11070
+  [-] SKIPPED 11072: Missing human label.
+  [SUCCESS] Saved POS tensors for 11076
+  [-] SKIPPED 11081: Missing human label.
+  [SUCCESS] Saved NEG tensors for 11088
+  [SUCCESS] Saved NEG tensors for 11092
+  [SUCCESS] Saved POS tensors for 11102
+  [SUCCESS] Saved NEG tensors for 11108
+  [SUCCESS] Saved NEG tensors for 11119
+  [-] SKIPPED 11123: Missing human label.
+  [SUCCESS] Saved NEG tensors for 11132
+  [-] SKIPPED 11133: Missing human label.
+  [SUCCESS] Saved NEG tensors for 11134
+  [SUCCESS] Saved NEG tensors for 11141
+  [SUCCESS] Saved NEG tensors for 11150
+  [!] REJECTED 11154: Tumor clipped (Strict Mode).
+  [SUCCESS] Saved NEG tensors for 11156
+  [SUCCESS] Saved NEG tensors for 11158
+  [SUCCESS] Saved POS tensors for 11162
+  [SUCCESS] Saved POS tensors for 11163
+  [-] SKIPPED 11169: Missing human label.
+  [SUCCESS] Saved NEG tensors for 11175
+  [SUCCESS] Saved NEG tensors for 11178
+  [SUCCESS] Saved NEG tensors for 11182
+  [SUCCESS] Saved NEG tensors for 11189
+  [SUCCESS] Saved POS tensors for 11190
+  [SUCCESS] Saved NEG tensors for 11191
+  [SUCCESS] Saved NEG tensors for 11199
+  [SUCCESS] Saved NEG tensors for 11211
+  [SUCCESS] Saved NEG tensors for 11218
+  [SUCCESS] Saved NEG tensors for 11226
+  [SUCCESS] Saved NEG tensors for 11228
+  [SUCCESS] Saved NEG tensors for 11238
+  [-] SKIPPED 11240: Missing human label.
+  [SUCCESS] Saved NEG tensors for 11251
+  [SUCCESS] Saved POS tensors for 11256
+  [SUCCESS] Saved POS tensors for 11257
+  [SUCCESS] Saved NEG tensors for 11263
+  [SUCCESS] Saved NEG tensors for 11270
+  [SUCCESS] Saved NEG tensors for 11275
+  [SUCCESS] Saved NEG tensors for 11277
+  [SUCCESS] Saved NEG tensors for 11282
+  [SUCCESS] Saved NEG tensors for 11286
+  [SUCCESS] Saved NEG tensors for 11287
+  [-] SKIPPED 11296: Missing human label.
+  [!] REJECTED 11299: Tumor clipped (Strict Mode).
+  [-] SKIPPED 11302: Missing human label.
+  [SUCCESS] Saved NEG tensors for 11303
+  [SUCCESS] Saved NEG tensors for 11308
+  [SUCCESS] Saved NEG tensors for 11319
+  [SUCCESS] Saved NEG tensors for 11326
+  [SUCCESS] Saved NEG tensors for 11340
+  [SUCCESS] Saved NEG tensors for 11344
+  [!] REJECTED 11357: Tumor clipped (Strict Mode).
+  [SUCCESS] Saved POS tensors for 11361
+  [SUCCESS] Saved NEG tensors for 11363
+  [SUCCESS] Saved NEG tensors for 11365
+  [SUCCESS] Saved NEG tensors for 11370
+  [SUCCESS] Saved NEG tensors for 11374
+  [SUCCESS] Saved NEG tensors for 11378
+  [SUCCESS] Saved NEG tensors for 11379
+  [SUCCESS] Saved NEG tensors for 11381
+  [SUCCESS] Saved NEG tensors for 11387
+  [SUCCESS] Saved NEG tensors for 11390
+  [SUCCESS] Saved NEG tensors for 11394
+  [SUCCESS] Saved POS tensors for 11397
+  [SUCCESS] Saved NEG tensors for 11409
+  [SUCCESS] Saved NEG tensors for 11411
+  [SUCCESS] Saved NEG tensors for 11418
+  [SUCCESS] Saved NEG tensors for 11419
+  [SUCCESS] Saved POS tensors for 11428
+  [SUCCESS] Saved NEG tensors for 11430
+  [SUCCESS] Saved NEG tensors for 11432
+  [SUCCESS] Saved NEG tensors for 11440
+  [SUCCESS] Saved POS tensors for 11444
+  [SUCCESS] Saved POS tensors for 11446
+  [SUCCESS] Saved POS tensors for 11448
+  [SUCCESS] Saved POS tensors for 11450
+  [SUCCESS] Saved NEG tensors for 11452
+  [SUCCESS] Saved NEG tensors for 11459
+  [SUCCESS] Saved NEG tensors for 11460
+  [-] SKIPPED 11472: Missing human label.
+  [SUCCESS] Saved NEG tensors for 10002
+  [SUCCESS] Saved POS tensors for 10005
+  [SUCCESS] Saved NEG tensors for 10007
+  [SUCCESS] Saved POS tensors for 10012
+  [-] SKIPPED 10013: Missing human label.
+  [SUCCESS] Saved NEG tensors for 10015
+  [SUCCESS] Saved NEG tensors for 10018
+  [SUCCESS] Saved POS tensors for 10021
+  [SUCCESS] Saved NEG tensors for 10025
+  [-] SKIPPED 10044: Missing human label.
+  [SUCCESS] Saved NEG tensors for 10057
+  [SUCCESS] Saved NEG tensors for 10064
+  [SUCCESS] Saved NEG tensors for 10066
+  [SUCCESS] Saved NEG tensors for 10086
+  [SUCCESS] Saved NEG tensors for 10088
+  [SUCCESS] Saved NEG tensors for 10091
+  [-] SKIPPED 10094: Missing human label.
+  [SUCCESS] Saved NEG tensors for 10095
+  [SUCCESS] Saved NEG tensors for 10101
+  [SUCCESS] Saved NEG tensors for 10111
+  [SUCCESS] Saved NEG tensors for 10113
+  [SUCCESS] Saved NEG tensors for 10114
+  [SUCCESS] Saved POS tensors for 10121
+  [SUCCESS] Saved NEG tensors for 10123
+  [SUCCESS] Saved NEG tensors for 10133
+  [-] SKIPPED 10135: Missing human label.
+  [SUCCESS] Saved NEG tensors for 10137
+  [SUCCESS] Saved NEG tensors for 10139
+  [SUCCESS] Saved NEG tensors for 10143
+  [SUCCESS] Saved NEG tensors for 10144
+  [SUCCESS] Saved NEG tensors for 10150
+  [SUCCESS] Saved NEG tensors for 10154
+  [SUCCESS] Saved NEG tensors for 10166
+  [-] SKIPPED 10171: Missing human label.
+  [SUCCESS] Saved NEG tensors for 10175
+  [SUCCESS] Saved NEG tensors for 10176
+  [SUCCESS] Saved NEG tensors for 10179
+  [SUCCESS] Saved NEG tensors for 10190
+  [SUCCESS] Saved NEG tensors for 10194
+  [SUCCESS] Saved NEG tensors for 10203
+  [SUCCESS] Saved NEG tensors for 10207
+  [SUCCESS] Saved NEG tensors for 10210
+  [-] SKIPPED 10212: Missing human label.
+  [-] SKIPPED 10214: Missing human label.
+  [SUCCESS] Saved NEG tensors for 10215
+  [SUCCESS] Saved POS tensors for 10216
+  [SUCCESS] Saved NEG tensors for 10221
+  [-] SKIPPED 10225: Missing human label.
+  [-] SKIPPED 10232: Missing human label.
+  [SUCCESS] Saved NEG tensors for 10244
+  [SUCCESS] Saved NEG tensors for 10251
+  [!] REJECTED 10252: Tumor clipped (Strict Mode).
+  [SUCCESS] Saved NEG tensors for 10253
+  [SUCCESS] Saved NEG tensors for 10254
+  [SUCCESS] Saved NEG tensors for 10255
+  [SUCCESS] Saved NEG tensors for 10258
+  [SUCCESS] Saved NEG tensors for 10261
+  [SUCCESS] Saved POS tensors for 10262
+  [SUCCESS] Saved NEG tensors for 10267
+  [-] SKIPPED 10271: Missing human label.
+  [SUCCESS] Saved NEG tensors for 10275
+  [SUCCESS] Saved NEG tensors for 10278
+  [SUCCESS] Saved NEG tensors for 10284
+  [SUCCESS] Saved NEG tensors for 10286
+  [!] REJECTED 10289: Tumor clipped (Strict Mode).
+  [SUCCESS] Saved NEG tensors for 10292
+  [SUCCESS] Saved NEG tensors for 10295
+  [SUCCESS] Saved NEG tensors for 10299
+  [SUCCESS] Saved POS tensors for 10304
+  [SUCCESS] Saved POS tensors for 10322
+  [SUCCESS] Saved NEG tensors for 10325
+  [SUCCESS] Saved NEG tensors for 10330
+  [SUCCESS] Saved POS tensors for 10340
+  [SUCCESS] Saved NEG tensors for 10344
+  [SUCCESS] Saved NEG tensors for 10346
+  [SUCCESS] Saved NEG tensors for 10353
+  [-] SKIPPED 10354: Missing human label.
+  [!] REJECTED 10355: Tumor clipped (Strict Mode).
+  [-] SKIPPED 10358: Missing human label.
+  [SUCCESS] Saved NEG tensors for 10361
+  [SUCCESS] Saved NEG tensors for 10364
+  [-] SKIPPED 10365: Missing human label.
+  [-] SKIPPED 10375: Missing human label.
+  [SUCCESS] Saved NEG tensors for 10381
+  [SUCCESS] Saved POS tensors for 10383
+  [SUCCESS] Saved NEG tensors for 10384
+  [SUCCESS] Saved NEG tensors for 10386
+  [!] REJECTED 10390: Tumor clipped (Strict Mode).
+  [-] SKIPPED 10397: Missing human label.
+  [-] SKIPPED 10399: Missing human label.
+  [SUCCESS] Saved NEG tensors for 10403
+  [SUCCESS] Saved NEG tensors for 10407
+  [SUCCESS] Saved NEG tensors for 10411
+  [SUCCESS] Saved NEG tensors for 10415
+  [SUCCESS] Saved NEG tensors for 10419
+  [-] SKIPPED 10426: Missing human label.
+  [SUCCESS] Saved POS tensors for 10434
+  [SUCCESS] Saved NEG tensors for 10440
+  [SUCCESS] Saved NEG tensors for 10445
+  [SUCCESS] Saved NEG tensors for 10447
+  [SUCCESS] Saved POS tensors for 10451
+  [SUCCESS] Saved NEG tensors for 10455
+  [SUCCESS] Saved NEG tensors for 10457
+  [-] SKIPPED 10464: Missing human label.
+  [SUCCESS] Saved NEG tensors for 10470
+  [SUCCESS] Saved NEG tensors for 10475
+  [SUCCESS] Saved NEG tensors for 10478
+  [SUCCESS] Saved NEG tensors for 10480
+  [!] REJECTED 10482: Tumor clipped (Strict Mode).
+  [SUCCESS] Saved NEG tensors for 10483
+  [SUCCESS] Saved NEG tensors for 10485
+  [!] REJECTED 10486: Tumor clipped (Strict Mode).
+  [-] SKIPPED 10497: Missing human label.
+  [-] SKIPPED 10499: Missing human label.
+  [-] SKIPPED 10510: Missing human label.
+  [-] SKIPPED 10519: Missing human label.
+  [SUCCESS] Saved NEG tensors for 10527
+  [SUCCESS] Saved NEG tensors for 10534
+  [SUCCESS] Saved NEG tensors for 10544
+  [-] SKIPPED 10547: Missing human label.
+  [SUCCESS] Saved NEG tensors for 10557
+  [-] SKIPPED 10560: Missing human label.
+  [SUCCESS] Saved NEG tensors for 10561
+  [SUCCESS] Saved NEG tensors for 10564
+  [SUCCESS] Saved NEG tensors for 10566
+  [SUCCESS] Saved NEG tensors for 10569
+  [SUCCESS] Saved NEG tensors for 10578
+  [!] REJECTED 10589: Tumor clipped (Strict Mode).
+  [SUCCESS] Saved NEG tensors for 10596
+  [-] SKIPPED 10611: Missing human label.
+  [SUCCESS] Saved NEG tensors for 10616
+  [SUCCESS] Saved NEG tensors for 10619
+  [SUCCESS] Saved NEG tensors for 10627
+  [SUCCESS] Saved POS tensors for 10637
+  [SUCCESS] Saved POS tensors for 10641
+  [SUCCESS] Saved NEG tensors for 10645
+  [SUCCESS] Saved NEG tensors for 10646
+  [SUCCESS] Saved NEG tensors for 10654
+  [-] SKIPPED 10661: Missing human label.
+  [SUCCESS] Saved POS tensors for 10668
+  [!] REJECTED 10670: Tumor clipped (Strict Mode).
+  [SUCCESS] Saved NEG tensors for 10676
+  [SUCCESS] Saved NEG tensors for 10678
+  [SUCCESS] Saved NEG tensors for 10689
+  [-] SKIPPED 10690: Missing human label.
+  [SUCCESS] Saved NEG tensors for 10694
+  [SUCCESS] Saved NEG tensors for 10702
+  [SUCCESS] Saved NEG tensors for 10703
+  [SUCCESS] Saved NEG tensors for 10709
+  [SUCCESS] Saved NEG tensors for 10716
+  [SUCCESS] Saved NEG tensors for 10732
+  [SUCCESS] Saved NEG tensors for 10733
+  [SUCCESS] Saved NEG tensors for 10735
+  [SUCCESS] Saved NEG tensors for 10740
+  [SUCCESS] Saved NEG tensors for 10741
+  [SUCCESS] Saved NEG tensors for 10746
+  [SUCCESS] Saved NEG tensors for 10752
+  [-] SKIPPED 10754: Missing human label.
+  [SUCCESS] Saved NEG tensors for 10778
+  [SUCCESS] Saved NEG tensors for 10785
+  [!] REJECTED 10798: Tumor clipped (Strict Mode).
+  [SUCCESS] Saved NEG tensors for 10800
+  [!] REJECTED 10808: Tumor clipped (Strict Mode).
+  [SUCCESS] Saved NEG tensors for 10812
+  [SUCCESS] Saved NEG tensors for 10814
+  [SUCCESS] Saved NEG tensors for 10817
+  [SUCCESS] Saved NEG tensors for 10819
+  [SUCCESS] Saved NEG tensors for 10820
+  [-] SKIPPED 10837: Missing human label.
+  [SUCCESS] Saved NEG tensors for 10838
+  [SUCCESS] Saved NEG tensors for 10846
+  [SUCCESS] Saved NEG tensors for 10849
+  [SUCCESS] Saved NEG tensors for 10854
+  [-] SKIPPED 10857: Missing human label.
+  [SUCCESS] Saved NEG tensors for 10859
+  [SUCCESS] Saved NEG tensors for 10860
+  [SUCCESS] Saved NEG tensors for 10869
+  [SUCCESS] Saved NEG tensors for 10870
+  [-] SKIPPED 10875: Missing human label.
+  [SUCCESS] Saved NEG tensors for 10884
+  [!] REJECTED 10885: Tumor clipped (Strict Mode).
+  [SUCCESS] Saved NEG tensors for 10886
+  [-] SKIPPED 10889: Missing human label.
+  [SUCCESS] Saved NEG tensors for 10896
+  [SUCCESS] Saved NEG tensors for 10897
   [-] SKIPPED 10900: Missing human label.
   [!] REJECTED 10901: Tumor clipped (Strict Mode).
   [-] SKIPPED 10903: Missing human label.
   [-] SKIPPED 10904: Missing human label.
-  [-] SKIPPED 10909: Missing human label.
-  [!] REJECTED 10910: Tumor clipped (Strict Mode).
-  [SUCCESS] Saved tensors for 10911
-  [SUCCESS] Saved tensors for 10915
-  [SUCCESS] Saved tensors for 10920
-  [SUCCESS] Saved tensors for 10921
-  [!] REJECTED 10925: Tumor clipped (Strict Mode).
-  [SUCCESS] Saved tensors for 10932
-  [!] REJECTED 10938: Tumor clipped (Strict Mode).
-  [SUCCESS] Saved tensors for 10942
-  [-] SKIPPED 10943: Missing human label.
+  [SUCCESS] Saved POS tensors for 10911
+  [SUCCESS] Saved NEG tensors for 10912
+  [SUCCESS] Saved POS tensors for 10915
+  [SUCCESS] Saved NEG tensors for 10917
+  [SUCCESS] Saved NEG tensors for 10926
   [!] REJECTED 10948: Tumor clipped (Strict Mode).
-  [SUCCESS] Saved tensors for 10953
-  [-] SKIPPED 10956: Missing human label.
-  [SUCCESS] Saved tensors for 10957
-  [SUCCESS] Saved tensors for 10961
-  [SUCCESS] Saved tensors for 10964
-  [-] SKIPPED 10965: Missing human label.
-  [SUCCESS] Saved tensors for 10968
-  [!] REJECTED 10970: Tumor clipped (Strict Mode).
+  [SUCCESS] Saved NEG tensors for 10950
+  [SUCCESS] Saved POS tensors for 10957
+  [SUCCESS] Saved NEG tensors for 10959
+  [SUCCESS] Saved NEG tensors for 10966
+  [SUCCESS] Saved NEG tensors for 10971
+  [SUCCESS] Saved NEG tensors for 10972
   [!] REJECTED 10975: Tumor clipped (Strict Mode).
-  [-] SKIPPED 10976: Missing human label.
-  [SUCCESS] Saved tensors for 10985
-  [-] SKIPPED 10991: Missing human label.
-  [-] SKIPPED 10993: Missing human label.
+  [SUCCESS] Saved NEG tensors for 10977
   [-] SKIPPED 10995: Missing human label.
-  [SUCCESS] Saved tensors for 11002
+  [SUCCESS] Saved NEG tensors for 10996
+  [SUCCESS] Saved NEG tensors for 11001
   [-] SKIPPED 11009: Missing human label.
-  [SUCCESS] Saved tensors for 11032
-  [-] SKIPPED 11037: Missing human label.
-  [!] REJECTED 11039: Tumor clipped (Strict Mode).
-  [!] REJECTED 11041: Tumor clipped (Strict Mode).
-  [-] SKIPPED 11043: Missing human label.
-  [-] SKIPPED 11045: Missing human label.
-  [SUCCESS] Saved tensors for 11049
-  [!] REJECTED 11050: Tumor clipped (Strict Mode).
-  [SUCCESS] Saved tensors for 11051
-  [SUCCESS] Saved tensors for 11054
-  [-] SKIPPED 11055: Missing human label.
-  [SUCCESS] Saved tensors for 11063
-  [-] SKIPPED 11067: Missing human label.
-  [!] REJECTED 11068: Tumor clipped (Strict Mode).
-  [-] SKIPPED 11072: Missing human label.
-  [SUCCESS] Saved tensors for 11074
-  [SUCCESS] Saved tensors for 11076
-  [SUCCESS] Saved tensors for 11080
-  [-] SKIPPED 11081: Missing human label.
-  [-] SKIPPED 11083: Missing human label.
-  [SUCCESS] Saved tensors for 11086
+  [SUCCESS] Saved NEG tensors for 11010
+  [SUCCESS] Saved NEG tensors for 11011
+  [SUCCESS] Saved NEG tensors for 11014
+  [SUCCESS] Saved NEG tensors for 11015
+  [SUCCESS] Saved NEG tensors for 11024
+  [SUCCESS] Saved NEG tensors for 11028
+  [SUCCESS] Saved NEG tensors for 11029
+  [SUCCESS] Saved NEG tensors for 11030
+  [SUCCESS] Saved NEG tensors for 11046
+  [SUCCESS] Saved POS tensors for 11049
+  [SUCCESS] Saved NEG tensors for 11058
+  [SUCCESS] Saved POS tensors for 11063
+  [SUCCESS] Saved NEG tensors for 11073
+  [SUCCESS] Saved NEG tensors for 11082
+  [SUCCESS] Saved NEG tensors for 11091
   [-] SKIPPED 11093: Missing human label.
-  [-] SKIPPED 11095: Missing human label.
-  [SUCCESS] Saved tensors for 11102
-  [-] SKIPPED 11111: Missing human label.
-  [!] REJECTED 11114: Tumor clipped (Strict Mode).
+  [SUCCESS] Saved NEG tensors for 11096
+  [SUCCESS] Saved NEG tensors for 11103
+  [SUCCESS] Saved NEG tensors for 11104
   [-] SKIPPED 11115: Missing human label.
-  [-] SKIPPED 11117: Missing human label.
-  [SUCCESS] Saved tensors for 11122
-  [-] SKIPPED 11123: Missing human label.
-  [SUCCESS] Saved tensors for 11130
-  [-] SKIPPED 11133: Missing human label.
-  [SUCCESS] Saved tensors for 11137
+  [SUCCESS] Saved NEG tensors for 11118
+  [SUCCESS] Saved NEG tensors for 11139
+  [SUCCESS] Saved NEG tensors for 11140
   [-] SKIPPED 11143: Missing human label.
-  [-] SKIPPED 11146: Missing human label.
-  [SUCCESS] Saved tensors for 11149
-  [SUCCESS] Saved tensors for 11152
-  [!] REJECTED 11154: Tumor clipped (Strict Mode).
-  [SUCCESS] Saved tensors for 11155
-  [-] SKIPPED 11157: Missing human label.
-  [SUCCESS] Saved tensors for 11162
-  [SUCCESS] Saved tensors for 11163
-  [SUCCESS] Saved tensors for 11165
-  [!] REJECTED 11168: Tumor clipped (Strict Mode).
-  [-] SKIPPED 11169: Missing human label.
-  [-] SKIPPED 11173: Missing human label.
+  [SUCCESS] Saved NEG tensors for 11145
+  [SUCCESS] Saved POS tensors for 11155
+  [SUCCESS] Saved NEG tensors for 11160
+  [SUCCESS] Saved NEG tensors for 11172
   [!] REJECTED 11174: Tumor clipped (Strict Mode).
-  [!] REJECTED 11177: Tumor clipped (Strict Mode).
   [-] SKIPPED 11179: Missing human label.
-  [SUCCESS] Saved tensors for 11181
   [!] REJECTED 11185: Tumor clipped (Strict Mode).
-  [SUCCESS] Saved tensors for 11186
-  [SUCCESS] Saved tensors for 11188
-  [SUCCESS] Saved tensors for 11190
-  [!] REJECTED 11194: Tumor clipped (Strict Mode).
-  [SUCCESS] Saved tensors for 11198
+  [SUCCESS] Saved NEG tensors for 11187
+  [SUCCESS] Saved NEG tensors for 11192
+  [SUCCESS] Saved NEG tensors for 11195
+  [SUCCESS] Saved NEG tensors for 11203
   [-] SKIPPED 11207: Missing human label.
-  [!] REJECTED 11208: Tumor clipped (Strict Mode).
-  [SUCCESS] Saved tensors for 11225
-  [SUCCESS] Saved tensors for 11229
-  [SUCCESS] Saved tensors for 11231
-  [SUCCESS] Saved tensors for 11236
+  [SUCCESS] Saved NEG tensors for 11209
+  [SUCCESS] Saved NEG tensors for 11213
+  [SUCCESS] Saved NEG tensors for 11215
+  [SUCCESS] Saved NEG tensors for 11224
+  [SUCCESS] Saved POS tensors for 11225
+  [SUCCESS] Saved NEG tensors for 11233
+  [SUCCESS] Saved NEG tensors for 11237
   [-] SKIPPED 11239: Missing human label.
-  [-] SKIPPED 11240: Missing human label.
-  [-] SKIPPED 11243: Missing human label.
-  [-] SKIPPED 11245: Missing human label.
-  [SUCCESS] Saved tensors for 11247
-  [-] SKIPPED 11248: Missing human label.
-  [SUCCESS] Saved tensors for 11253
-  [SUCCESS] Saved tensors for 11256
-  [SUCCESS] Saved tensors for 11257
-  [-] SKIPPED 11258: Missing human label.
-  [!] REJECTED 11260: Tumor clipped (Strict Mode).
-  [-] SKIPPED 11266: Missing human label.
-  [SUCCESS] Saved tensors for 11269
-  [-] SKIPPED 11274: Missing human label.
-  [SUCCESS] Saved tensors for 11278
+  [SUCCESS] Saved NEG tensors for 11241
+  [SUCCESS] Saved NEG tensors for 11244
+  [SUCCESS] Saved NEG tensors for 11255
+  [SUCCESS] Saved NEG tensors for 11267
+  [SUCCESS] Saved NEG tensors for 11271
+  [SUCCESS] Saved POS tensors for 11278
+  [SUCCESS] Saved NEG tensors for 11279
   [!] REJECTED 11280: Tumor clipped (Strict Mode).
-  [-] SKIPPED 11283: Missing human label.
-  [!] REJECTED 11284: Tumor clipped (Strict Mode).
-  [-] SKIPPED 11285: Missing human label.
-  [-] SKIPPED 11296: Missing human label.
-  [!] REJECTED 11299: Tumor clipped (Strict Mode).
-  [SUCCESS] Saved tensors for 11300
-  [-] SKIPPED 11302: Missing human label.
-  [!] REJECTED 11305: Tumor clipped (Strict Mode).
-  [SUCCESS] Saved tensors for 11306
-  [-] SKIPPED 11313: Missing human label.
-  [-] SKIPPED 11322: Missing human label.
-  [SUCCESS] Saved tensors for 11325
-  [SUCCESS] Saved tensors for 11330
-  [-] SKIPPED 11332: Missing human label.
-  [-] SKIPPED 11333: Missing human label.
-  [-] SKIPPED 11334: Missing human label.
+  [SUCCESS] Saved NEG tensors for 11292
+  [SUCCESS] Saved NEG tensors for 11293
+  [SUCCESS] Saved NEG tensors for 11298
+  [SUCCESS] Saved POS tensors for 11300
+  [SUCCESS] Saved NEG tensors for 11301
+  [SUCCESS] Saved NEG tensors for 11311
+  [SUCCESS] Saved NEG tensors for 11316
+  [SUCCESS] Saved NEG tensors for 11317
+  [SUCCESS] Saved NEG tensors for 11321
+  [SUCCESS] Saved NEG tensors for 11324
   [-] SKIPPED 11336: Missing human label.
-  [SUCCESS] Saved tensors for 11338
-  [-] SKIPPED 11341: Missing human label.
-  [SUCCESS] Saved tensors for 11345
-  [-] SKIPPED 11346: Missing human label.
-  [-] SKIPPED 11350: Missing human label.
-  [-] SKIPPED 11352: Missing human label.
-  [!] REJECTED 11357: Tumor clipped (Strict Mode).
-  [SUCCESS] Saved tensors for 11361
-  [-] SKIPPED 11367: Missing human label.
-  [-] SKIPPED 11369: Missing human label.
-  [SUCCESS] Saved tensors for 11373
-  [SUCCESS] Saved tensors for 11375
-  [SUCCESS] Saved tensors for 11377
-  [SUCCESS] Saved tensors for 11382
-  [SUCCESS] Saved tensors for 11384
-  [!] REJECTED 11385: Tumor clipped (Strict Mode).
-  [SUCCESS] Saved tensors for 11397
-  [-] SKIPPED 11400: Missing human label.
-  [!] REJECTED 11423: Tumor clipped (Strict Mode).
-  [-] SKIPPED 11425: Missing human label.
-  [-] SKIPPED 11426: Missing human label.
-  [SUCCESS] Saved tensors for 11428
-  [-] SKIPPED 11437: Missing human label.
-  [SUCCESS] Saved tensors for 11441
-  [!] REJECTED 11442: Tumor clipped (Strict Mode).
-  [SUCCESS] Saved tensors for 11444
-  [SUCCESS] Saved tensors for 11446
-  [!] REJECTED 11447: Tumor clipped (Strict Mode).
-  [SUCCESS] Saved tensors for 11448
-  [SUCCESS] Saved tensors for 11450
-  [-] SKIPPED 11451: Missing human label.
-  [SUCCESS] Saved tensors for 11456
-  [SUCCESS] Saved tensors for 11462
+  [SUCCESS] Saved POS tensors for 11345
+  [SUCCESS] Saved NEG tensors for 11348
+  [SUCCESS] Saved NEG tensors for 11354
+  [SUCCESS] Saved NEG tensors for 11364
+  [SUCCESS] Saved NEG tensors for 11368
+  [SUCCESS] Saved POS tensors for 11375
+  [SUCCESS] Saved NEG tensors for 11380
+  [SUCCESS] Saved NEG tensors for 11393
+  [SUCCESS] Saved NEG tensors for 11395
+  [SUCCESS] Saved NEG tensors for 11398
+  [SUCCESS] Saved NEG tensors for 11399
+  [SUCCESS] Saved NEG tensors for 11401
+  [SUCCESS] Saved NEG tensors for 11417
+  [SUCCESS] Saved NEG tensors for 11422
+  [SUCCESS] Saved NEG tensors for 11431
+  [SUCCESS] Saved NEG tensors for 11433
+  [SUCCESS] Saved NEG tensors for 11436
+  [SUCCESS] Saved NEG tensors for 11438
+  [SUCCESS] Saved NEG tensors for 11453
+  [SUCCESS] Saved NEG tensors for 11458
+  [SUCCESS] Saved POS tensors for 11462
+  [SUCCESS] Saved NEG tensors for 11463
+  [SUCCESS] Saved NEG tensors for 11464
   [!] REJECTED 11465: Tumor clipped (Strict Mode).
-  [-] SKIPPED 11468: Missing human label.
-  [SUCCESS] Saved tensors for 11471
-  [-] SKIPPED 11472: Missing human label.
-  [SUCCESS] Saved tensors for 11475
+  [SUCCESS] Saved NEG tensors for 11470
+  [SUCCESS] Saved POS tensors for 11475
 
 Pipeline Complete (STRICT).
-Yielded 156/424 clean cases.
+Yielded 156 Clean Positives and 1052 Clean Negatives.
 Logs saved to data/preprocessing_strict_128.log
-Patient lists saved to data/dataset_splits_strict_128.json
+Inventory saved to data/processed_inventory_strict_128.json

@@ -128,29 +128,37 @@ def load_picai_case(case_id, image_root, label_root):
     # Load Raw Objects
     t2_sitk     = load_mha(t2_path)
     adc_sitk    = load_mha(adc_path)
-    lesion_sitk = load_nifti(lesion_path)
+    # lesion_sitk = load_nifti(lesion_path)
     gland_sitk  = load_nifti(gland_path)
     zone_sitk   = load_nifti(zone_path)
+
+    gland_t2  = resample_to_reference(gland_sitk,  t2_sitk, sitk.sitkNearestNeighbor)
+    zone_t2   = resample_to_reference(zone_sitk,   t2_sitk, sitk.sitkNearestNeighbor)
+    # sitkLinear for continuous image data (ADC).
+    adc_aligned_to_t2 = resample_to_reference(adc_sitk, t2_sitk, sitk.sitkLinear)
+
+    gland_adc  = resample_to_reference(gland_sitk,  adc_sitk, sitk.sitkNearestNeighbor)
+    zone_adc   = resample_to_reference(zone_sitk,   adc_sitk, sitk.sitkNearestNeighbor)
+
+    # Dynamically handle the missing cancer masks for healthy patients.
+    if lesion_path.exists():
+        lesion_sitk = load_nifti(lesion_path)
+        lesion_t2 = resample_to_reference(lesion_sitk, t2_sitk, sitk.sitkNearestNeighbor)
+        # 2. Align Label to ADC
+        # Resample the *original* lesion_sitk to ADC, not the T2 version, to avoid double-interpolation artifacts.
+        lesion_adc = resample_to_reference(lesion_sitk, adc_sitk, sitk.sitkNearestNeighbor)
+    else:
+        # Create an empty volume with the exact physical grid of the T2.
+        lesion_t2 = sitk.Image(t2_sitk.GetSize(), sitk.sitkUInt8)
+        lesion_t2.CopyInformation(t2_sitk)
+        lesion_adc = sitk.Image(adc_sitk.GetSize(), sitk.sitkUInt8)
+        lesion_adc.CopyInformation(adc_sitk)
 
     # -----------------------------------------------------------
     # Explicitly resample everything to T2 geometry
     # -----------------------------------------------------------
     # Even if 'lesion_sitk' is supposedly resampled,  run this to guarantee 
     # it matches the T2 voxel grid exactly (Origin/Direction/Spacing).
-    
-    # 1. Align Label to T2
-    lesion_t2 = resample_to_reference(lesion_sitk, t2_sitk, sitk.sitkNearestNeighbor)
-    gland_t2  = resample_to_reference(gland_sitk,  t2_sitk, sitk.sitkNearestNeighbor)
-    zone_t2   = resample_to_reference(zone_sitk,   t2_sitk, sitk.sitkNearestNeighbor)
-
-    # 2. Align Label to ADC
-    # Resample the *original* lesion_sitk to ADC, not the T2 version, to avoid double-interpolation artifacts.
-    lesion_adc = resample_to_reference(lesion_sitk, adc_sitk, sitk.sitkNearestNeighbor)
-    gland_adc  = resample_to_reference(gland_sitk,  adc_sitk, sitk.sitkNearestNeighbor)
-    zone_adc   = resample_to_reference(zone_sitk,   adc_sitk, sitk.sitkNearestNeighbor)
-
-    # sitkLinear for continuous image data (ADC).
-    adc_aligned_to_t2 = resample_to_reference(adc_sitk, t2_sitk, sitk.sitkLinear)
 
     return {
         "t2": robust_normalize(sitk_to_numpy(t2_sitk)),
