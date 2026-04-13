@@ -154,8 +154,8 @@ def load_picai_case(case_id, image_root, label_root):
 
     return {
         "t2": robust_normalize(sitk_to_numpy(t2_sitk)),
-        #"adc": robust_normalize(sitk_to_numpy(adc_sitk)),
-        "adc": robust_normalize(sitk_to_numpy(adc_aligned_to_t2)),
+        "adc": robust_normalize(sitk_to_numpy(adc_sitk)),
+        # "adc_to_t2": robust_normalize(sitk_to_numpy(adc_aligned_to_t2)),
         
         # Now these are guaranteed to be the same shape as "t2"
         "lesion_t2": sitk_to_numpy(lesion_t2),
