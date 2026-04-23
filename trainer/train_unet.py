@@ -149,6 +149,24 @@ def recall_score(preds: torch.tensor, targets: torch.tensor)-> float:
     return recall.mean().item()
 
 
+def split_files(all_files: list, train_ratio=0.7, val_ratio=0.15) -> tuple[list, list, list]:
+        """
+        Splits a file list into train, val, and test sets at the patient level.
+        Defaults to a 70/15/15 split.
+
+        params:
+                all_files: list - full list of .pt file paths
+                train_ratio: float - proportion for training
+                val_ratio: float  - proportion for validation (remainder becomes test)
+        returns:
+                train_files, val_files, test_files: tuple of file path lists
+        """
+        n = len(all_files)
+        train_end = int(train_ratio * n)
+        val_end = train_end + int(val_ratio * n)
+        return all_files[:train_end], all_files[train_end:val_end], all_files[val_end:]
+
+
 def reg_unet():
     """
     The main training function for the 2D UNet. Saves the model to the current
@@ -165,10 +183,10 @@ def reg_unet():
     )  # Necessary for file imports. Could be improved
     # Uncomment for debug runs
     # all_files = all_files[100:700]
-    split_idx:int = int(0.7 * len(all_files))
-    train_files:list = all_files[:split_idx]
-    val_files:list = all_files[split_idx:]
-    print(f"Train patients: {len(train_files)} | Val patients: {len(val_files)}")
+
+    train_files, val_files, test_files = split_files(all_files)
+    
+    print(f"Train patients: {len(train_files)} | Val patients: {len(val_files)} | Test Patients: {len(test_files)}")
     train_dice_list:list = []
     val_dice_list:list = []
     val_losses:list = []
