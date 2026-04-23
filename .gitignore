@@ -18,3 +18,5 @@ labels/*
 *.pt
 
 *.png
+*.pth
+*.log
