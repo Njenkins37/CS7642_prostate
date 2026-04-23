@@ -1,5 +1,11 @@
+"""
+The raw_data_loader.py is meant to read the file location either local or a cloud location
+and convert the picai cases to a .pt file with keys to load cases faster than using
+load_picai_case alone. There is no data processing of the files.
+
+"""
 from loader import IMAGES_ROOT, LABELS_ROOT, load_picai_case
-from torch.utils.data import Dataset, DataLoader
+from torch.utils.data import Dataset
 import time
 from pathlib import Path
 import torch
@@ -13,24 +19,13 @@ logging.basicConfig(
         logging.StreamHandler()
     ]
 )
-class PicaiDataset(Dataset):
-    def __init__(self, data, labels, transforms=None):
-        self.data = data
-        self.label = labels
-        self.transform = transforms
-
-    def __len__(self):
-        return len(self.data)
-    
-    def __getitem__(self, idx):
-        sample = self.data[idx]
-        label = self.label[idx]
-        if self.transform:
-            sample = self.transform(sample)
-        return sample, label
-
 
 class DatasetUtil:
+    """
+    Utility class meant to load the data from the picai class and then 
+    save the file as a tensor. 
+
+    """
     def __init__(self):
         self.image = IMAGES_ROOT
         self.label = LABELS_ROOT
@@ -58,13 +53,15 @@ class DatasetUtil:
 
         return case_id
     
-    def prepocess_and_save(self, output_dir="CS7642_prostate/output"):
+    def prepocess_and_save(self, output_dir="CS7642_prostate/output") -> None:
         """
         Loads the images and converts the images into a torch tensor and saves it to the 
         parameterized output directors
 
-        params: output_dir - default is CS7642_prostate/output. This path is attached to the home directory
-        returns: None. Saves the tensors as a .pt
+        params: 
+                output_dir - default is CS7642_prostate/output. This path is attached to the home directory
+        returns: 
+                None. Saves the tensors as a .pt
         """
         start = time.time()
         output_dir = Path.home()/output_dir
@@ -90,8 +87,6 @@ class DatasetUtil:
 if __name__ == "__main__":
     # util = DatasetUtil()
     # util.prepocess_and_save()
-
-
 
     data = torch.load("output/10005.pt")
 

@@ -12,6 +12,7 @@ import os
 import glob
 import time
 import matplotlib.pyplot as plt
+import torch.nn.functional as F
 
 # Selecting device in heirarchy of speed
 device = torch.device(
@@ -173,7 +174,7 @@ def reg_unet():
     val_losses:list = []
     train_losses:list = []
 
-    start:time.time = time.time()
+    start:float = time.time()
     train_dataset:MRIDataset = MRIDataset(train_files)
     val_dataset:MRIDataset = MRIDataset(val_files)
     print(
@@ -186,11 +187,10 @@ def reg_unet():
     model:UNet = UNet(n_slices=1, n_classes=1).to(device)
 
     #### The optimizer section. Opportunity for tuning and improving performance #####
-    optimizer = torch.optim.SGD(
-        model.parameters(), lr=1e-4, momentum=0.9, weight_decay=0
+    optimizer = torch.optim.AdamW(
+        model.parameters(), lr=1e-4, weight_decay=1e-5, betas=(0.9, 0.99),
     )
-    pos_weight = torch.tensor([10]).to(device)  # Adding weight to the positive instances
-    bce = nn.BCEWithLogitsLoss(pos_weight=pos_weight) 
+    focal = FocalLoss(alpha=0.75, gamma=2.0)
 
     for epoch in range(30):
         ############### Training ################
@@ -203,7 +203,7 @@ def reg_unet():
             optimizer.zero_grad()
             preds = model(images)
 
-            loss = bce(preds, masks) + dice_loss(preds, masks)
+            loss = focal.forward(preds, masks) + dice_loss(preds, masks)            
             loss.backward()
             optimizer.step()
             train_dice_score = dice_score(preds, masks)
@@ -225,7 +225,7 @@ def reg_unet():
                 images, masks = images.to(device), masks.to(device)
                 outputs = model(images)
 
-                val_loss += (bce(outputs, masks) + dice_loss(outputs, masks)).item()
+                loss = focal.forward(outputs, masks) + dice_loss(outputs, masks)
                 val_dice_score = dice_score(outputs, masks)
                 val_dice_total += val_dice_score
                 val_recall += recall_score(outputs, masks)
@@ -259,6 +259,21 @@ def reg_unet():
             "unet.pth",
         )
     return train_dice_list, val_dice_list, train_losses, val_losses
+
+
+class FocalLoss:
+    def __init__(self, alpha: float = 0.75, gamma=0.25):
+        self.alpha = alpha
+        self.gamma = gamma
+
+    def forward(self, preds: torch.Tensor, targets: torch.Tensor) -> torch.Tensor:
+        bce_loss = F.binary_cross_entropy_with_logits(preds, targets, reduction="none")
+        probs = torch.sigmoid(preds)
+        p_t = probs * targets + (1 - probs) * (1 - targets)
+        alpha_t = self.alpha * targets + (1 - self.alpha) * (1 - targets)
+        focal_weight = alpha_t * (1 - p_t) ** self.gamma
+
+        return (focal_weight * bce_loss).mean()
 
 
 def plot():
@@ -334,56 +349,6 @@ def prob_map(idx:int=5) -> None:
     plt.colorbar(im, ax=axes[2])
 
     plt.savefig("probability_heatmap.png", dpi=150)
-    plt.show()
-
-
-def visualize_feature_maps(device="mps", idx=5, layer_name="up1"):
-    """
-    Visualizes the feature map of the different kernels of a parameterized layer
-    The layer_name parameter must match one of the layers in the models/unet.py file.
-
-    params:
-            device: str - default is mps, but cuda would be accepted
-            idx: int - default is 5 due to prior knowledge that index has a noticeable lesion
-            layer_name: str - the layer from the unet model to visualize
-    returns:
-            None - plots and saves the figure
-    """
-    all_files = sorted(glob.glob(os.path.join("../output", "*.pt")))
-    split_idx = int(0.7 * len(all_files))
-    val_files = all_files[split_idx:]
-
-    val_dataset = MRIDataset(val_files)
-
-    checkpoint = torch.load("unet.pth", map_location=device)
-    model = UNet(n_slices=1, n_classes=1).to(device)
-    model.load_state_dict(checkpoint["model_state_dict"])
-    image, _ = val_dataset[idx]
-
-    activations = {}
-
-    def hook_fn(module, input, output):
-        activations["features"] = output.detach()
-
-    hook = getattr(model, layer_name).register_forward_hook(hook_fn)
-
-    model.eval()
-    with torch.no_grad():
-        model(image.unsqueeze(0).to(device))
-    hook.remove()
-
-    features = activations["features"].squeeze().cpu()  # (C, H, W)
-    n_show = min(16, features.shape[0])
-
-    fig, axes = plt.subplots(4, 4, figsize=(12, 12))
-    for i, ax in enumerate(axes.flat):
-        if i < n_show:
-            ax.imshow(features[i].numpy(), cmap="viridis")
-            ax.set_title(f"Filter {i}")
-        ax.axis("off")
-
-    plt.suptitle(f"Feature maps from '{layer_name}'")
-    plt.savefig("feature_maps.png", dpi=150)
     plt.show()
 
 
