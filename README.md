@@ -94,6 +94,20 @@ python scripts/preprocess_dataset.py
 python scripts/generate_splits.py
 ```
 
+### Alternative: Adaptive Prostate-BBox Cropping (`scripts/preprocess_adaptive.py`)
+A second preprocessor produces tensors using a per-case adaptive bounding box around the prostate (and any lesion) instead of a fixed cookie-cutter crop. Positives and negatives are processed in a single pass, and gland/zone masks are persisted alongside `lesion` for downstream experiments.
+
+Output drops into `data/processed_tensors_adaptive_<crop_size>/` and an inventory at `data/processed_inventory_adaptive_<crop_size>.json` — the same naming convention as the strict/shift pipeline, so the trainer and evaluator pick it up automatically once `strategy: "adaptive"` is set in `config/dataset.yaml`.
+
+```bash
+# config/dataset.yaml -> strategy: "adaptive"
+python scripts/preprocess_adaptive.py --output_size 128 --padding 16
+python scripts/generate_splits.py
+python trainer/train.py --lr 1e-3 --batch_size 64
+```
+
+`preprocess_negatives.py` is **not** needed for this strategy — `preprocess_adaptive.py` handles both classes.
+
 ---
 
 ## 5. Model Architecture & Training
