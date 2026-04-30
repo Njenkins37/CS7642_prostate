@@ -129,8 +129,6 @@ def main():
         logging.error("No weight files found in models/weights/")
         return
 
-    model = UNet2_5D(in_channels=3, n_classes=1).to(device)
-
     for pth_path in pth_files:
         # Derive RUN_TAG from the .pth filename: unet25d_<RUN_TAG>_best.pth. Should work for legacy runs too
         stem = pth_path.stem  # drops .pth
@@ -162,8 +160,10 @@ def main():
         else:
             logging.warning(f"  [!] No matching CSV found for LR {lr_val}.")
 
-        # Evaluate Model.
-        logging.info(f"  [*] Evaluating on {args.split.upper()} set...")
+        # Model evaluation. Match to saved dict; no attention runs  use the fallback
+        use_attention = not run_tag.endswith("_noatt")
+        model = UNet2_5D(in_channels=3, n_classes=1, use_attention=use_attention).to(device)
+        logging.info(f"  [*] Evaluating on {args.split.upper()} set... (attention={'on' if use_attention else 'off'})")
         model.load_state_dict(torch.load(pth_path, map_location=device, weights_only=True))
         global_dice, sensitivity = evaluate_model(model, loader, device, run_dir)
 

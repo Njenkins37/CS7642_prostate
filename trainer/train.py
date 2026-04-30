@@ -46,6 +46,7 @@ def setup_argparser():
     parser.add_argument("--dice_weight", type=float, default=0.5, help="Dice term weight in CombinedFocalDiceLoss")
     parser.add_argument("--focal_weight", type=float, default=0.5, help="Focal term weight in CombinedFocalDiceLoss")
     parser.add_argument("--alpha", type=float, default=0.25, help="Focal Loss alpha (positive-class weight)")
+    parser.add_argument("--no_attention", action="store_true", help="Disable cross-attention bottleneck; use the concat+1x1 fallback fusion.")
     return parser.parse_args()
 
 def main():
@@ -73,7 +74,7 @@ def main():
     # Setup CSV Logger for the presentation.
     RUN_TAG = (f"lr{args.lr:.2e}_wd{args.weight_decay:.2e}"
                f"_dw{args.dice_weight:.2f}_fw{args.focal_weight:.2f}"
-               f"_a{args.alpha:.2f}_bs{args.batch_size}")
+               f"_a{args.alpha:.2f}_bs{args.batch_size}"+ ("_noatt" if args.no_attention else ""))
     csv_path = WEIGHTS_DIR / f"metrics_{RUN_TAG}.csv"
     with open(csv_path, 'w', newline='') as f:
         writer = csv.writer(f)
@@ -90,7 +91,7 @@ def main():
     logging.info(f"Loaded {len(train_dataset)} Train slices and {len(val_dataset)} Validation slices.")
 
     # Initialize Architecture.
-    model = UNet2_5D(in_channels=3, n_classes=1).to(device)
+    model = UNet2_5D(in_channels=3, n_classes=1,  use_attention=not args.no_attention).to(device) #attention switch
     criterion = CombinedFocalDiceLoss(
         alpha=args.alpha,
         dice_weight=args.dice_weight,

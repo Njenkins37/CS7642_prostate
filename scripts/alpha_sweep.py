@@ -21,7 +21,13 @@ from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 WEIGHTS_DIR = REPO_ROOT / "models" / "weights"
-RESULTS_CSV = REPO_ROOT / "data" / "alpha_sweep_results.csv"
+
+# True passes --no_attention to train.py and outputs
+NO_ATTENTION = True
+
+# Separate outputs to prevent overwrite
+RESULTS_CSV = REPO_ROOT /"data" /(
+    "alpha_sweep_results_noatt.csv" if NO_ATTENTION else "alpha_sweep_results.csv")
 
 # Fixed HPs (selected from random search)
 LR = 5.19e-04
@@ -37,7 +43,7 @@ ALPHAS = [0.10, 0.25, 0.40, 0.55, 0.70, 0.85]
 # Unique output naming
 def run_tag(alpha):
     return (f"lr{LR:.2e}_wd{WD:.2e}_dw{DW:.2f}_fw{FW:.2f}"
-            f"_a{alpha:.2f}_bs{BATCH_SIZE}")
+            f"_a{alpha:.2f}_bs{BATCH_SIZE}"+ ("_noatt" if NO_ATTENTION else ""))
 
 def best_val_from_csv(csv_path):
     best, best_epoch = float("inf"), -1
@@ -57,16 +63,18 @@ def run_trial(idx, alpha):
     tag = run_tag(alpha)
     print(f"\n=== trial {idx}/{len(ALPHAS)}: alpha={alpha:.2f}  ({tag}) ===", flush=True)
     t0 = time.time()
-    proc = subprocess.run(
-        [sys.executable, "trainer/train.py",
-         "--epochs", str(EPOCHS_PER_TRIAL),
-         "--batch_size", str(BATCH_SIZE),
-         "--lr", str(LR),
-         "--weight_decay", str(WD),
-         "--dice_weight", str(DW),
-         "--focal_weight", str(FW),
-         "--alpha", str(alpha)],
-        cwd=str(REPO_ROOT) )
+    cmd = [sys.executable, "trainer/train.py", 
+           "--epochs", str(EPOCHS_PER_TRIAL),
+           "--batch_size", str(BATCH_SIZE),
+           "--lr", str(LR),
+           "--weight_decay", str(WD),
+           "--dice_weight", str(DW),
+           "--focal_weight", str(FW),
+           "--alpha", str(alpha)]
+    if NO_ATTENTION:
+        cmd.append("--no_attention")
+    proc =subprocess.run(cmd, cwd=str(REPO_ROOT))
+    
     elapsed = time.time() - t0
     csv_path = WEIGHTS_DIR / f"metrics_{tag}.csv"
     base = {"trial": idx, "alpha": alpha, "tag": tag, "elapsed_s": round(elapsed, 1)}
