@@ -69,15 +69,15 @@ class MRIDataset(Dataset):
         params:
                 idx: int - the index of the file that is being processed
         returns:
-                image: torch.tensor - the 128x128 image converted to torch tensors
-                mask: torch.tensor - the 128x128 mask converted to torch tensors
+                image: torch.tensor - the 256x256 image converted to torch tensors
+                mask: torch.tensor - the 256x256 mask converted to torch tensors
         """
         file_idx, slice_idx = self.slices[idx]
         data = self.cache[file_idx]
         image = data["t2"][..., slice_idx].float().unsqueeze(0)
         mask = (data["lesion_t2"][..., slice_idx].float() > 2).float().unsqueeze(0)
-        image = TF.resize(image, [128, 128])
-        mask = TF.resize(mask, [128, 128], interpolation=TF.InterpolationMode.NEAREST)
+        image = TF.resize(image, [256, 256])
+        mask = TF.resize(mask, [256, 256], interpolation=TF.InterpolationMode.NEAREST)
         return image, mask
 
     def __len__(self):
@@ -209,11 +209,11 @@ def reg_unet():
 
     #### The optimizer section. Opportunity for tuning and improving performance #####
     optimizer = torch.optim.AdamW(
-        model.parameters(), lr=1e-4, weight_decay=1e-5, betas=(0.9, 0.99),
+        model.parameters(), lr=1e-4, weight_decay=1e-5, betas=(0.79, 0.99),
     )
-    focal = FocalLoss(alpha=0.75, gamma=2.0)
+    focal = FocalLoss(alpha=0.18, gamma=3.1)
 
-    for epoch in range(28):
+    for epoch in range(8):
         ############### Training ################
         model.train()
         train_loss, train_dice_total, train_correct, train_total = 0.0, 0.0, 0, 0
