@@ -138,31 +138,29 @@ def load_picai_case(case_id, image_root, label_root):
     # Even if 'lesion_sitk' is supposedly resampled,  run this to guarantee 
     # it matches the T2 voxel grid exactly (Origin/Direction/Spacing).
     
-    # 1. Align Label to T2
+    # Resample image + masks onto the T2 voxel grid so all modalities share
+    # Origin/Direction/Spacing. trainer/dataset.py uses one Z-index for both
+    # T2 and ADC, so they must live on the same grid (matches utils/loader.py).
     lesion_t2 = resample_to_reference(lesion_sitk, t2_sitk, sitk.sitkNearestNeighbor)
     gland_t2  = resample_to_reference(gland_sitk,  t2_sitk, sitk.sitkNearestNeighbor)
     zone_t2   = resample_to_reference(zone_sitk,   t2_sitk, sitk.sitkNearestNeighbor)
-
-    # 2. Align Label to ADC
-    # Resample the *original* lesion_sitk to ADC, not the T2 version, to avoid double-interpolation artifacts.
-    lesion_adc = resample_to_reference(lesion_sitk, adc_sitk, sitk.sitkNearestNeighbor)
-    gland_adc  = resample_to_reference(gland_sitk,  adc_sitk, sitk.sitkNearestNeighbor)
-    zone_adc   = resample_to_reference(zone_sitk,   adc_sitk, sitk.sitkNearestNeighbor)
-
-    # sitkLinear for continuous image data (ADC).
     adc_aligned_to_t2 = resample_to_reference(adc_sitk, t2_sitk, sitk.sitkLinear)
 
-    return {
-        "t2": robust_normalize(sitk_to_numpy(t2_sitk)),
-        "adc": robust_normalize(sitk_to_numpy(adc_sitk)),
-        # "adc_to_t2": robust_normalize(sitk_to_numpy(adc_aligned_to_t2)),
-        
-        # Now these are guaranteed to be the same shape as "t2"
-        "lesion_t2": sitk_to_numpy(lesion_t2),
-        "gland_t2":  sitk_to_numpy(gland_t2),
-        "zone_t2":   sitk_to_numpy(zone_t2),
+    t2_np     = robust_normalize(sitk_to_numpy(t2_sitk))
+    adc_np    = robust_normalize(sitk_to_numpy(adc_aligned_to_t2))
+    lesion_np = sitk_to_numpy(lesion_t2)
+    gland_np  = sitk_to_numpy(gland_t2)
+    zone_np   = sitk_to_numpy(zone_t2)
 
-        "lesion_adc": sitk_to_numpy(lesion_adc),
-        "gland_adc":  sitk_to_numpy(gland_adc),
-        "zone_adc":   sitk_to_numpy(zone_adc),
+    # `_adc` keys retained for the dict shape preprocess_adaptive.py expects;
+    # they share the T2 grid with `_t2` since ADC has been resampled onto it.
+    return {
+        "t2": t2_np,
+        "adc": adc_np,
+        "lesion_t2": lesion_np,
+        "gland_t2":  gland_np,
+        "zone_t2":   zone_np,
+        "lesion_adc": lesion_np,
+        "gland_adc":  gland_np,
+        "zone_adc":   zone_np,
     }

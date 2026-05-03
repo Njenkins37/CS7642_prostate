@@ -1,0 +1,6 @@
+# Explicit LF to override autocrlf. Windows keeps switching to crlf
+## detect text
+* text=auto eol=lf
+*.py     text eol=lf
+*.ipynb  text eol=lf
+# *.csv    text eol=lf  # skipped for now

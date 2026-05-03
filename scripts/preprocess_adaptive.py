@@ -47,7 +47,8 @@ from utils.loader_adaptive import load_picai_case, pos_list
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 DEFAULT_IMAGES_ROOT = PROJECT_ROOT / "images"
 DEFAULT_LABELS_ROOT = PROJECT_ROOT / "labels"
-DEFAULT_OUTPUT_ROOT = PROJECT_ROOT / "data" / "preprocess_v2_adaptive"
+# Output dir is resolved at runtime to data/processed_tensors_adaptive_{output_size}
+# so it slots into the {strategy}_{crop_size} naming used by the rest of the pipeline.
 
 # Log output
 CSV_FIELDS = [
@@ -73,7 +74,8 @@ def setup_argparser() -> argparse.ArgumentParser:
     parser.add_argument("--max_cases", type=int, default=None, help="Cap on number of cases processed. Useful for smoke tests.")
     parser.add_argument("--images_root", type=str, default=str(DEFAULT_IMAGES_ROOT))
     parser.add_argument("--labels_root", type=str, default=str(DEFAULT_LABELS_ROOT))
-    parser.add_argument("--output_dir", type=str, default=str(DEFAULT_OUTPUT_ROOT))
+    parser.add_argument("--output_dir", type=str, default=None,
+                        help="Output dir for NPZs. Default: data/processed_tensors_adaptive_<output_size>")
     return parser
 
 
@@ -354,9 +356,12 @@ def process_case(case_id: str, state: RunState) -> None:
         adc_resized, gland_adc_resized, lesion_adc_resized, zone_adc_resized, _ = adc_branch
 
     # Save
+    # `lesion` is an alias of `lesion_t2` for compatibility with trainer/dataset.py,
+    # which loads NPZ key "lesion" exactly like preprocess_dataset.py emits.
     np.savez_compressed(
         state.output_dir / f"{case_id}_clean.npz",
         t2=t2_resized.astype(np.float32),
+        lesion=lesion_t2_resized.astype(np.uint8),
         lesion_t2=lesion_t2_resized.astype(np.uint8),
         gland_t2=gland_t2_resized.astype(np.uint8),
         zone_t2=zone_t2_resized.astype(np.uint8),
@@ -390,6 +395,8 @@ def _build_namespace(**kwargs) -> argparse.Namespace:
     # Resolve root paths to absolute Path objects.
     args.images_root = Path(args.images_root).resolve()
     args.labels_root = Path(args.labels_root).resolve()
+    if args.output_dir is None:
+        args.output_dir = PROJECT_ROOT / "data" / f"processed_tensors_adaptive_{args.output_size}"
     args.output_dir = Path(args.output_dir).resolve()
     return args
 
@@ -472,6 +479,22 @@ def run_preprocess(
     with open(json_path, "w") as handle:
         json.dump({"clean_cases": results["clean_cases"]}, handle, indent=2)
 
+    # Inventory in the format scripts/generate_splits.py expects, so the manifest
+    # step is identical to the strict/shift pipelines.
+    inventory_path = args.output_dir.parent / f"processed_inventory_adaptive_{args.output_size}.json"
+    inventory = {
+        "metadata": {
+            "strategy": "adaptive",
+            "crop_size": args.output_size,
+            "padding": args.padding,
+            "max_crop": args.max_crop,
+        },
+        "clean_positives": [int(c) for c in results["clean_positive_cases"]],
+        "clean_negatives": [int(c) for c in results["clean_negative_cases"]],
+    }
+    with open(inventory_path, "w") as handle:
+        json.dump(inventory, handle, indent=2)
+
     n_clean = len(results["clean_cases"])
     n_total = len(case_ids)
     ratio = (n_clean / n_total) if n_total else 0.0
@@ -479,6 +502,7 @@ def run_preprocess(
     logging.info(f"  positives: {len(results['clean_positive_cases'])}")
     logging.info(f"  negatives: {len(results['clean_negative_cases'])}")
     logging.info(f"Logs: {logs_dir}")
+    logging.info(f"Inventory: {inventory_path}")
 
     # Release the log file after write. Other can't mod in windows
     root_logger = logging.getLogger()
@@ -499,7 +523,7 @@ def main() -> None:
         max_cases=args.max_cases,
         images_root=Path(args.images_root),
         labels_root=Path(args.labels_root),
-        output_dir=Path(args.output_dir),
+        output_dir=Path(args.output_dir) if args.output_dir else None,
     )
 
 if __name__ == "__main__":

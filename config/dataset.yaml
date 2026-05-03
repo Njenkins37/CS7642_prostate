@@ -1,6 +1,6 @@
 dataset:
   crop_size: 128
-  strategy: "strict"  # Options: "strict", "shift"
+  strategy: "adaptive"  # Options: "strict", "shift", "adaptive"
 
 balancing:
   mode: "auto_balance" # Options: "auto_balance", "clinical_override"

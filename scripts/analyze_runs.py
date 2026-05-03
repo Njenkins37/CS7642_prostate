@@ -129,34 +129,41 @@ def main():
         logging.error("No weight files found in models/weights/")
         return
 
-    model = UNet2_5D(in_channels=3, n_classes=1).to(device)
-
     for pth_path in pth_files:
-        # Extract LR using regex.
-        match = re.search(r'lr([0-9.]+)_best', pth_path.name)
-        if not match:
+        # Derive RUN_TAG from the .pth filename: unet25d_<RUN_TAG>_best.pth. Should work for legacy runs too
+        stem = pth_path.stem  # drops .pth
+        if not stem.startswith("unet25d_") or not stem.endswith("_best"):
             continue
-        
-        lr_val = match.group(1)
+        run_tag = stem[len("unet25d_"):-len("_best")]
+
+        # Extract LR for logs (scientific notation fix for readability).
+        lr_match = re.search(r"lr([0-9.eE+\-]+?)(?:_|$)", run_tag)
+        lr_val = lr_match.group(1) if lr_match else run_tag
+
         logging.info(f"\n======================================")
-        logging.info(f"Processing Run: Learning Rate {lr_val}")
+        logging.info(f"Processing Run: {run_tag}")
         logging.info(f"======================================")
 
-        # Create run-specific directory
-        run_dir = results_dir / f"run_lr_{lr_val}"
+        # Create run-specific sub directory to avoid overwrites
+        run_dir = results_dir / f"run_{run_tag}"
         run_dir.mkdir(exist_ok=True)
 
-        # Plot Learning Curve.
-        # Look for the matching CSV file (ignoring the batch size in the name).
-        csv_files = list(weights_dir.glob(f"metrics_lr{lr_val}_bs*.csv"))
+        # Plot learning curve, but try naming match first, revert to legacy write
+        exact = weights_dir / f"metrics_{run_tag}.csv"
+        if exact.exists():
+            csv_files = [exact]
+        else:
+            csv_files = list(weights_dir.glob(f"metrics_lr{lr_val}_bs*.csv"))
         if csv_files:
             plot_learning_curve(csv_files[0], run_dir / "learning_curve.png")
             logging.info(f"  [+] Learning curve saved.")
         else:
             logging.warning(f"  [!] No matching CSV found for LR {lr_val}.")
 
-        # Evaluate Model.
-        logging.info(f"  [*] Evaluating on {args.split.upper()} set...")
+        # Model evaluation. Match to saved dict; no attention runs  use the fallback
+        use_attention = not run_tag.endswith("_noatt")
+        model = UNet2_5D(in_channels=3, n_classes=1, use_attention=use_attention).to(device)
+        logging.info(f"  [*] Evaluating on {args.split.upper()} set... (attention={'on' if use_attention else 'off'})")
         model.load_state_dict(torch.load(pth_path, map_location=device, weights_only=True))
         global_dice, sensitivity = evaluate_model(model, loader, device, run_dir)
 
