@@ -19,4 +19,9 @@ labels/*
 .DS_Store
 
 !*.gitkeep
-notebooks/tests.ipynb
+
+*.pt
+
+*.png
+*.pth
+*.log

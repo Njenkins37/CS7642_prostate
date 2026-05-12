@@ -2,8 +2,15 @@ import numpy as np
 import SimpleITK as sitk
 from pathlib import Path
 
-IMAGES_ROOT = Path("images")
-LABELS_ROOT = Path("labels")
+IS_ONE_DRIVE = True
+
+# Edit one drive path as needed. False defaults to local "images" and "labels" folders
+if IS_ONE_DRIVE:
+    IMAGES_ROOT = Path.home()/"OneDrive - GT"/"Ward, Ryan's files - Prostate MRI"/"images"
+    LABELS_ROOT = Path.home()/"OneDrive - GT"/"Ward, Ryan's files - Prostate MRI"/"labels"
+else:
+    IMAGES_ROOT = Path("images")
+    LABELS_ROOT = Path("labels")
 
 pos_list = [
     10005, 10008, 10012, 10013, 10019, 10021, 10029, 10032, 10036, 10040, 
