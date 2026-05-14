@@ -1,0 +1,3 @@
+trial,lr,weight_decay,feature_base,use_attention,focal_alpha,train_exit_code,checkpoint,val_dice,val_sensitivity,test_dice,test_sensitivity,notes
+1,0.0003,0.0001,32,True,0.25,0,models/weights/unet25d_lr0.0003_focal0.25_wd0.0001_fcb32_attn_best.pth,0.350929,0.326016,0.493441,0.492977,
+2,0.0003,0.0001,48,True,0.25,0,models/weights/unet25d_lr0.0003_focal0.25_wd0.0001_fcb48_attn_best.pth,0.318595,0.350195,0.453261,0.539928,

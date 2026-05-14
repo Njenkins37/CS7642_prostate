@@ -39,6 +39,7 @@ class CrossAttentionBlock(nn.Module):
         
         # Learnable parameter to scale the attention output before adding the residual.
         self.gamma = nn.Parameter(torch.zeros(1))
+        # self.gamma = nn.Parameter(torch.tensor([1e-4]))
 
     def forward(self, t2_features, adc_features):
         # Batch size, Channels, Height, Width.

@@ -4,6 +4,9 @@ import csv
 import logging
 import torch
 import numpy as np
+import matplotlib
+
+matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 from pathlib import Path
 from tqdm import tqdm
@@ -11,7 +14,44 @@ from torch.utils.data import DataLoader
 
 from models.unet2_5d import UNet2_5D
 from trainer.dataset import PICAI25DDataset
+from trainer.train import feature_list_from_base
 import yaml
+
+
+def parse_checkpoint_path(pth_path: Path):
+    """
+    Returns (run_tag, use_attention, legacy_lr, feature_base) or Nones if unrecognized.
+    legacy_lr: for old lr-only checkpoints, folder run_lr_{legacy_lr}; else None.
+    """
+    name = pth_path.name
+    m_full = re.match(
+        r"unet25d_lr([\d.eE+-]+)_focal([\d.eE+-]+)_wd([\d.eE+-]+)_fcb(\d+)_(attn|noattn)_best\.pth$",
+        name,
+    )
+    if m_full:
+        lr, fa, wd, fcb, attn = m_full.groups()
+        run_tag = f"lr{lr}_focal{fa}_wd{wd}_fcb{fcb}_{attn}"
+        use_attention = attn == "attn"
+        return run_tag, use_attention, None, int(fcb)
+
+    m_mid = re.match(
+        r"unet25d_lr([\d.eE+-]+)_focal([\d.eE+-]+)_(attn|noattn)_best\.pth$",
+        name,
+    )
+    if m_mid:
+        lr, fa, attn = m_mid.groups()
+        run_tag = f"lr{lr}_focal{fa}_{attn}"
+        use_attention = attn == "attn"
+        return run_tag, use_attention, None, 64
+
+    m_old = re.match(r"unet25d_(lr[\d.]+)_best\.pth$", name)
+    if m_old:
+        lr_token = m_old.group(1)
+        legacy_lr = lr_token[2:] if lr_token.startswith("lr") else lr_token
+        return lr_token, True, legacy_lr, 64
+
+    return None, None, None, None
+
 
 def plot_learning_curve(csv_path, output_path):
     epochs, train_loss, val_loss = [], [], []
@@ -122,53 +162,63 @@ def main():
     results_dir = Path("results")
     results_dir.mkdir(exist_ok=True)
 
-    # Find all trained models.
-    pth_files = list(weights_dir.glob("unet25d_lr*_best.pth"))
+    # Find all trained models (new tagged names and legacy lr-only names).
+    pth_files = sorted(set(weights_dir.glob("unet25d_*_best.pth")))
     
     if not pth_files:
         logging.error("No weight files found in models/weights/")
         return
 
-    model = UNet2_5D(in_channels=3, n_classes=1).to(device)
-
     for pth_path in pth_files:
-        # Extract LR using regex.
-        match = re.search(r'lr([0-9.]+)_best', pth_path.name)
-        if not match:
+        run_tag, use_attention, legacy_lr, feature_base = parse_checkpoint_path(pth_path)
+        if run_tag is None:
+            logging.warning(f"Skipping unrecognized checkpoint: {pth_path.name}")
             continue
-        
-        lr_val = match.group(1)
+
+        if legacy_lr is not None:
+            run_dir = results_dir / f"run_lr_{legacy_lr}"
+            csv_glob = f"metrics_{run_tag}_bs*.csv"
+        else:
+            run_dir = results_dir / f"run_{run_tag}"
+            csv_glob = f"metrics_{run_tag}_bs*.csv"
+
+        features = feature_list_from_base(feature_base)
+
         logging.info(f"\n======================================")
-        logging.info(f"Processing Run: Learning Rate {lr_val}")
+        logging.info(
+            f"Processing Run: {run_tag} (attention={use_attention}, feature_base={feature_base})"
+        )
         logging.info(f"======================================")
 
-        # Create run-specific directory
-        run_dir = results_dir / f"run_lr_{lr_val}"
         run_dir.mkdir(exist_ok=True)
 
-        # Plot Learning Curve.
-        # Look for the matching CSV file (ignoring the batch size in the name).
-        csv_files = list(weights_dir.glob(f"metrics_lr{lr_val}_bs*.csv"))
+        csv_files = list(weights_dir.glob(csv_glob))
         if csv_files:
             plot_learning_curve(csv_files[0], run_dir / "learning_curve.png")
             logging.info(f"  [+] Learning curve saved.")
         else:
-            logging.warning(f"  [!] No matching CSV found for LR {lr_val}.")
+            logging.warning(f"  [!] No matching CSV for pattern {csv_glob}")
 
-        # Evaluate Model.
         logging.info(f"  [*] Evaluating on {args.split.upper()} set...")
+        model = UNet2_5D(
+            in_channels=3,
+            n_classes=1,
+            features=features,
+            use_attention=use_attention,
+        ).to(device)
         model.load_state_dict(torch.load(pth_path, map_location=device, weights_only=True))
         global_dice, sensitivity = evaluate_model(model, loader, device, run_dir)
 
-        # Save Text Summary.
         summary_path = run_dir / "metrics_summary.log"
         with open(summary_path, "w") as f:
-            f.write(f"Run Configuration: LR = {lr_val}\n")
+            f.write(f"Run tag: {run_tag}\n")
+            f.write(f"feature_base: {feature_base} (widths {features})\n")
+            f.write(f"use_attention: {use_attention}\n")
             f.write(f"Evaluation Split: {args.split.upper()}\n")
             f.write("-" * 30 + "\n")
             f.write(f"Global Dice Score: {global_dice:.4f}\n")
             f.write(f"Sensitivity (Recall): {sensitivity:.4f}\n")
-            
+
         logging.info(f"  [+] Evaluation complete. Global Dice: {global_dice:.4f}")
         logging.info(f"  [+] All assets saved to {run_dir}/")
 
